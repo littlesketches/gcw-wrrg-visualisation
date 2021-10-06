@@ -29,8 +29,17 @@
 
 body{
     font-family: 'Roboto';
-    margin: 0;
 }
+.title-block{
+    border-bottom: 3px solid #000;
+}
+    .main-title{
+        font-size: 5vw;
+        margin-block-end: 0.25rem;
+    }
+    .main-subtitle{
+        font-size: 2.5vw;
+    }
 
 
 circle.node-bg{
@@ -41,15 +50,24 @@ circle.node-bg{
 }
 .node-label{
     pointer-events: none;
-    font-weight: 300;
+    font-weight: 600;
     font-size: 10px;
     text-anchor: middle;
-    dominant-baseline: middle;
+    /* dominant-baseline: middle; */
 }
 .link{
-    pointer-events: none;
+    cursor: pointer;
     fill: none;
-    stroke:rgba(20, 20, 20, 0.35);
+    stroke:rgb(50, 50, 50);
     stroke-width: 2px;
     mix-blend-mode: multiply;
+    opacity: 0.1
+}
+.link:hover{
+    opacity: 1;
+}
+
+.label-section{
+    font-size: 30px;
+    font-weight: 600;
 }

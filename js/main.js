@@ -23,19 +23,20 @@
             showTitle:          true
         },
         dims: {
-            width:              1080,
-            height:             1920,
+            width:              1200,
+            height:             1800,
             margin: {
                 top:            30,
-                bottom:         10,
-                left:           40,
-                right:          40
+                bottom:         50,
+                left:           100,
+                right:          50
             }
         },
         geometry: {            
             nodePos:            {},
-            nodeSize:           {min: 25, max: 40},
-            linkWidth:          {min: 5, max: 40}
+            nodeSize:           {min: 20, max: 60},
+            linkWidth:          {min: 5, max: 30},
+            flowGap:            2
         },           
     }
 
@@ -56,10 +57,31 @@
         state:  {
             region:         'All LGAs',
             material:       'All materials',
-            year:           ''
+            year:           2019
         },
         scale:  {},
-        linkGenerators: {}
+        linkGenerators: {
+            straightLink: d3.line()
+                .x(d => d.x)
+                .y(d => d.y),
+            linkVertical: d3.linkVertical()    // Bezier link generator accepting object {source: [x,y], and   target [x,y] }
+                .source(d => d.source)
+                .target(d => d.target),  
+            linkVerticalOffset:  (obj) => {
+                const totalLinkHeight = Math.abs(obj.target[1] - obj.source[1]),
+                    stem1_height = totalLinkHeight * obj.vLength1,
+                    stem2_height = totalLinkHeight * (1 - obj.vLength2)
+
+                const vertStem1 = `M${obj.source[0]} ${obj.source[1]} v${stem1_height}`,
+                    vertStem2 = `v${stem2_height}`,
+                    curvePath = vis.linkGenerators.linkVertical({
+                        source: [obj.source[0],  obj.source[1] + stem1_height],
+                        target: [obj.target[0],  obj.target[1] - stem2_height]
+                    })
+                const path = `${vertStem1} ${curvePath} ${vertStem2}`
+                return path
+            }   
+        }
     }
 
 
@@ -71,7 +93,6 @@
         console.log('Building from tsv data')
         // 0. Prepare scene for fade in animation
         d3.select(`#${settings.svgID}`).style('opacity', 0)
-
         // 1. Specify data table links for each table used (tsv published output from each separate sheet/table)
         const gsTableLinks =   {
             data_flows:        'https://docs.google.com/spreadsheets/d/e/2PACX-1vRiOIe0V4uDrpJ3vxk06pPZ2NKwMMPlS0J0XKPYxQAWc14l0QHX3fdhKvbMWXoz---hCLIOkXMnM_vN/pub?gid=1665717612&single=true&output=tsv',
@@ -116,28 +137,26 @@
     async function applyQuerySettings(settings){
         // i. Check for query parameters and update material. A date set by the query selector is set while parsing input data 
         settings.queryParameters = new URLSearchParams(window.location.search)
-        if (settings.queryParameters.has('year'))   settings.year = settings.queryParameters.get('year')  
-        
+        if (settings.queryParameters.has('year'))   settings.year = settings.queryParameters.get('year')    
     };
 
     async function transformData() {
-
+        const excludedFields = ['year', 'lga', 'sourceNode', 'targetNode', 'vLength1', 'vLength2', 'rankIn' , 'rankOut']
         // 1. Extract lists 
         data.schema.list.lga = data.inputTable.schema_lgas.filter( d => d.wrrg === settings.info.wrrgFullName).map(d => d.lgaLabel).sort()
         data.schema.list.nodeName = data.inputTable.schema_nodes.map(d => d.nodeName)
-        const excludedFields = ['year', 'lga', 'sourceNode', 'targetNode', 'vLength1', 'vLength2']
-
+        data.schema.list.nodeLR = data.inputTable.schema_nodes.map(d => d.nodeName).sort((b,a) => b.xPos - a.xPos)
         data.schema.list.submaterial = Object.keys(data.inputTable.data_flows[0]).filter(d => excludedFields.indexOf(d)  === -1)
 
-        // 2. Create node data objects
-        const nodeYearData = data.inputTable.data_flows.filter(d => d.year === settings.year)
+        // 2. Create node and link data objects
+        const flowYearData = data.inputTable.data_flows.filter(d => d.year === settings.year)
         data.schema.list.lga.unshift('All LGAs')        // Add All LGAs
 
         for( region of data.schema.list.lga){
             data.chart.node[region] = {}
             data.chart.link[region] = {}
 
-            for( submaterial of data.schema.list.submaterial){
+            for (submaterial of data.schema.list.submaterial){
                 data.chart.node[region][submaterial] = []
                 data.chart.link[region][submaterial] = []
 
@@ -149,44 +168,53 @@
                     obj.valueOut =  0
                     obj.valueIn =  0
 
-                    // Loop to record outputs and add up total, and input
-                    for( dataObj of nodeYearData.filter(d => d.lga === region)) {
+                    // Loop to record outputs and add up total, and inputs
+                    for( dataObj of flowYearData.filter(d => d.lga === region)) {
                         if(dataObj.sourceNode === nodeObj.nodeName){
                             obj.valueOut += dataObj[submaterial]
                             obj.outputNodes.push({
                                 target: dataObj.targetNode,
-                                value:  dataObj[submaterial]  
+                                value:  dataObj[submaterial]
                             })
                         }
 
                         if(dataObj.targetNode ===  nodeObj.nodeName){
-                            obj.valueIn += dataObj.value  
-                            obj.outputNodes.push({
+                            obj.valueIn += dataObj[submaterial]
+                            obj.inputNodes.push({
                                 target: dataObj.sourceNode,
                                 value:  dataObj[submaterial],
+                                rank:   flowYearData.filter(d => d.lga === region && d.targetNode ===  dataObj.targetNode && d.sourceNode === dataObj.sourceNode)[0].rankIn
                             })
                         }
                     }
                     // Add the node data object if it has any waste flow
                     obj.value = d3.max([obj.valueOut, obj.valueIn])
                     data.chart.node[region][submaterial].push(obj)
-
                 }
 
                 // Links
-                for (obj of nodeYearData.filter(d => d.lga === region)){
+                for (obj of flowYearData.filter(d => d.lga === region)){
                     data.chart.link[region][submaterial].push({
-                        source: obj.sourceNode,
-                        target: obj.targetNode,
-                        vLength1: obj.vLength1,
-                        vLength2: obj.vLength2,
-                        value:  obj[submaterial]    
+                        source:     obj.sourceNode,
+                        target:     obj.targetNode,
+                        vLength1:   obj.vLength1,
+                        vLength2:   obj.vLength2,
+                        value:      obj[submaterial],
+                        rankIn:     obj.rankIn,    
+                        rankOut:    obj.rankOut    
                     })
                 } 
+
+                // Loop to re-ranked input nodes for layout
+                for( dataObj of data.chart.node[region][submaterial]) { 
+                    dataObj.inputNodes = dataObj.inputNodes.sort( (a,b) => a.rank - b.rank)
+                }
             }
         }
+        // Re-rank input nodes according to manual rank (node: output node order is ranked by the data order)
 
-
+        console.log(data.chart.node[vis.state.region][vis.state.material])
+        console.log(data.chart.link[vis.state.region][vis.state.material])
     }; // end transformData()
 
 
@@ -221,16 +249,17 @@
         svg.on('mouseover', () => document.getElementById('svg-title').innerHTML = null )
             .on('mouseout', () =>  document.getElementById('svg-title').innerHTML = svgTitleText )
 
+
         // 3. SETUP SCALES
-        vis.scale.nodePosX  = d3.scaleLinear().domain([0, 1]).range([settings.dims.margin.left, settings.dims.margin.left + visWidth])
-        vis.scale.nodePosY  = d3.scaleLinear().domain([0, 1]).range([settings.dims.margin.top, settings.dims.margin.left + visHeight])
+        vis.scale.nodePosX  = d3.scaleLinear().domain([0, 1]).range([settings.dims.margin.left, settings.dims.width - settings.dims.margin.right])
+        vis.scale.nodePosY  = d3.scaleLinear().domain([0, 1]).range([settings.dims.margin.top, settings.dims.height - settings.dims.margin.bottom ])
         vis.scale.nodeSize  = d3.scaleSqrt().domain(d3.extent(nodeData.map(d => d.value))).range([settings.geometry.nodeSize.min, settings.geometry.nodeSize.max])
+        vis.scale.linkWidth = d3.scaleLinear().domain(d3.extent(linkData.map(d => d.value))).range([settings.geometry.linkWidth.min, settings.geometry.linkWidth.max])
 
 
-        // 4. RENDER NODES
+        // 4. RENDER NODES: Background circle shape and text
         for (nodeObj of nodeData) {
             const group = nodeGroup.append('g').classed(`node-group ${helpers.slugify(nodeObj.type)} ${helpers.slugify(nodeObj.nodeName)}`, true)
-
             group.append('circle').classed(`node-bg ${helpers.slugify(nodeObj.type)} ${helpers.slugify(nodeObj.nodeName)}`, true)
                 .attr('cx', vis.scale.nodePosX(nodeObj.xPos))
                 .attr('cy', vis.scale.nodePosY(nodeObj.yPos))
@@ -242,46 +271,57 @@
                 .attr('y', vis.scale.nodePosY(nodeObj.yPos))
                 .attr('dy', 0)
                 .text(nodeObj.nodeNameShort !== '' ? nodeObj.nodeNameShort : nodeObj.nodeName)
-                .call(helpers.wrap, 140, 1.1, true )
+                .call(helpers.wrap, vis.scale.nodeSize(nodeObj.value)* 2.5, 1.1 )
         }
 
 
         // 5. RENDER LINKS
-        vis.linkGenerators = {
-            straightLink: d3.line()
-                .x(d => d.x)
-                .y(d => d.y),
-            linkVertical: d3.linkVertical()    // Bezier link generator accepting object {source: [x,y], and   target [x,y] }
-                .source(d => d.source)
-                .target(d => d.target),  
+        // a. Create link position start and end offsets (taking to prevent overlap)
+        for (nodeObj of nodeData){
+            // Node outputs
+            const rankedOutputNodes = nodeObj.outputNodes, 
+                outputWidths = rankedOutputNodes.map(d => vis.scale.linkWidth(d.value)),
+                cumSumOutputWidths = [0].concat([].slice.call(d3.cumsum(outputWidths))),
+                totalOutputWidth = d3.sum(outputWidths) + settings.geometry.flowGap * (outputWidths.length - 1)
+                outputOffsetXArray = outputWidths.map((d,i) => (cumSumOutputWidths[i] + d * 0.5 +  i * settings.geometry.flowGap ) - (totalOutputWidth * 0.5))
 
-            linkVerticalOffset:  (obj) => {
-                const totalLinkHeight = Math.abs(obj.target[1] - obj.source[1]),
-                    stem1_height = totalLinkHeight * obj.vLength1,
-                    stem2_height = totalLinkHeight * (1 - obj.vLength2)
+            nodeObj.startOffsetX = {}
+            for (i = 0; i < rankedOutputNodes.length; i++){
+                nodeObj.startOffsetX[rankedOutputNodes[i].target] = outputOffsetXArray[i]
+            }
 
-                const vertStem1 = `M${obj.source[0]} ${obj.source[1]} v${stem1_height}`,
-                    vertStem2 = `v${stem2_height}`,
-                    curvePath = vis.linkGenerators.linkVertical({
-                        source: [obj.source[0],  obj.source[1] + stem1_height],
-                        target: [obj.target[0],  obj.target[1] - stem2_height]
-                    })
-                const path = `${vertStem1} ${curvePath} ${vertStem2}`
-                return path
-            },     
+            // Node inputs
+
+            const rankedInputNodes = nodeObj.inputNodes
+                // .sort( (b, a) => {
+                //     const linkData_a = data.inputTable.data_flows.filter(d.year === vis.state.year && d.lga === vis.state.region && d.sourceNode === source && d.targetNode === a.target    )
+                    
+
+                // })
+                ,
+                inputWidths = rankedInputNodes.map(d => vis.scale.linkWidth(d.value)),
+                cumSumInputWidths = [0].concat([].slice.call(d3.cumsum(inputWidths))),
+                totalInputWidth = d3.sum(inputWidths) + settings.geometry.flowGap * (inputWidths.length - 1)
+                inputOffsetXArray = inputWidths.map((d,i) => (cumSumInputWidths[i] + d * 0.5 +  i * settings.geometry.flowGap ) - (totalInputWidth * 0.5))
+
+            nodeObj.endOffsetX = {}
+            for (i = 0; i < rankedInputNodes.length; i++){
+                nodeObj.endOffsetX[rankedInputNodes[i].target] = inputOffsetXArray[i]
+            }
         }
 
-        console.log(data.chart.link[region])
+        // b. Add each link
         for( linkObj of linkData){
 
-            const source = linkObj.source,
-                target = linkObj.target,
+            const source = linkObj.source, target = linkObj.target,
+                sourceNodeObj = nodeData.filter(d => d.nodeName === source)[0],
+                targetNodeObj = nodeData.filter(d => d.nodeName === target)[0],
                 sourcePos = [
-                    vis.scale.nodePosX(nodeData.filter(d => d.nodeName === source)[0].xPos),
+                    vis.scale.nodePosX(nodeData.filter(d => d.nodeName === source)[0].xPos) + sourceNodeObj.startOffsetX[target],
                     vis.scale.nodePosY(nodeData.filter(d => d.nodeName === source)[0].yPos)
                 ],
                 targetPos = [
-                    vis.scale.nodePosX(nodeData.filter(d => d.nodeName === target)[0].xPos),
+                    vis.scale.nodePosX(nodeData.filter(d => d.nodeName === target)[0].xPos) + targetNodeObj.endOffsetX[source],
                     vis.scale.nodePosY(nodeData.filter(d => d.nodeName === target)[0].yPos)
                 ]
 
@@ -294,9 +334,38 @@
                         vLength2: linkObj.vLength2,
                     }) 
                 )
-
-
+                .style('stroke-width', vis.scale.linkWidth(linkObj.value))
         }
+
+
+        // ADD ANNOTATION
+        const collectionGroup  = annotationGroup.append('g')
+            .attr('transform', `translate(${5}, ${vis.scale.nodePosY(0.05)})`)
+        collectionGroup.append('text').classed('label-section', true)
+            .attr('x',0)
+            .attr('y',0)
+            .attr('dy',0)
+            .text('Waste collection')
+            .call(helpers.wrap, settings.dims.margin.left, 1.1, false)
+
+
+        const managementGroup  = annotationGroup.append('g')
+            .attr('transform', `translate(${5}, ${vis.scale.nodePosY(0.25)})`)
+        managementGroup.append('text').classed('label-section', true)
+            .attr('x',0)
+            .attr('y',0)
+            .attr('dy',0)
+            .text('Waste management')
+            .call(helpers.wrap, settings.dims.margin.left, 1.1, false)
+
+        const endGroup  = annotationGroup.append('g')
+            .attr('transform', `translate(${5}, ${vis.scale.nodePosY(0.8)})`)
+        endGroup.append('text').classed('label-section', true)
+            .attr('x',0)
+            .attr('y',0)
+            .attr('dy',0)
+            .text('Waste end destination')
+            .call(helpers.wrap, settings.dims.margin.left, 1.1, false)
 
 
 
@@ -372,7 +441,7 @@
                     }                    
                 }            
                 if(centerVertical){
-                    text.style("transform",  "translateY(-"+(10 * (lineNumber))+"px)")
+                    text.style("transform",  "translateY(-"+(5 * (lineNumber))+"px)")
                 }
             })
         }
