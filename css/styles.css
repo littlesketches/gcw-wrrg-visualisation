@@ -1,0 +1,55 @@
+
+/***********************************************************/
+/***********************************************************/
+/****                                                   ****/
+/**** CUSTOM WASTE FLOWS VISUALISATION STYLESHEET    ****/
+/**** -----------------------------------------------   ****/
+/**** - CSS Variables and loaded fonts from core.css    ****/
+/****                                                   ****/
+/***********************************************************/
+/********************************************++***************/
+
+/*** Palette ***/
+
+/********************************************/
+/*** COLOUR PALETTES | CSS VARIABLE DEFS  ***/
+/********************************************/
+
+:root {
+    /** PRIMARY GCW GREEN AND LIME PALLETTE **/
+    --green:                 #006838;
+    --lime:                  #98c035;
+
+    /*** MONOCHROMS */
+    --lightgrey:            rgb(220, 220, 220);
+    --grey:                 rgb(100, 100, 100);       
+    --darkgrey:             rgb(20, 20, 20);
+
+}
+
+body{
+    font-family: 'Roboto';
+    margin: 0;
+}
+
+
+circle.node-bg{
+
+}
+.node-bg{
+    cursor: pointer;
+}
+.node-label{
+    pointer-events: none;
+    font-weight: 300;
+    font-size: 10px;
+    text-anchor: middle;
+    dominant-baseline: middle;
+}
+.link{
+    pointer-events: none;
+    fill: none;
+    stroke:rgba(20, 20, 20, 0.35);
+    stroke-width: 2px;
+    mix-blend-mode: multiply;
+}
