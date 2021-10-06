@@ -20,7 +20,7 @@
     --green:                 #006838;
     --lime:                  #98c035;
 
-    /*** MONOCHROMS */
+    /*** MONOCHROMES */
     --lightgrey:            rgb(220, 220, 220);
     --grey:                 rgb(100, 100, 100);       
     --darkgrey:             rgb(20, 20, 20);
@@ -36,9 +36,11 @@ body{
     .main-title{
         font-size: 5vw;
         margin-block-end: 0.25rem;
+        letter-spacing: 0.2vw;;
     }
     .main-subtitle{
         font-size: 2.5vw;
+        margin-block-start: 0em;
     }
 
 
@@ -51,17 +53,23 @@ circle.node-bg{
 .node-label{
     pointer-events: none;
     font-weight: 600;
-    font-size: 10px;
+    font-size: 14px;
     text-anchor: middle;
-    /* dominant-baseline: middle; */
+    text-shadow:
+         #fff 1.5px 1.5px 3px, 
+         #fff -1.5px -1.5px 3px, 
+         #fff 5px 5px 10px,
+         #fff -5px -5px 10px;
+
 }
+
 .link{
     cursor: pointer;
     fill: none;
     stroke:rgb(50, 50, 50);
     stroke-width: 2px;
     mix-blend-mode: multiply;
-    opacity: 0.1
+    opacity: 0.25;
 }
 .link:hover{
     opacity: 1;
@@ -70,4 +78,43 @@ circle.node-bg{
 .label-section{
     font-size: 30px;
     font-weight: 600;
+}
+.label-end-destination{
+    font-size: 24px;
+    font-weight: 600;
+    text-anchor: middle
+}
+
+.link.waste-disposal{
+    stroke: #FF7276;
+}
+.link.waste-to-energy{
+    stroke: rgb(163, 68, 163);
+}
+.link.recovered-product{
+    stroke: var(--green);
+}
+.link.export{
+    stroke: var(--lime);
+}
+.link.waste-management{
+    stroke: #F6BE00;
+}
+
+.label-end-destination.waste-disposal{
+    fill: #FF7276;
+}
+.label-end-destination.waste-to-energy{
+    fill: rgb(163, 68, 163);
+}
+.label-end-destination.recovered-product{
+    fill: var(--green);
+}
+
+
+
+@media print{
+    .title-block{
+        display: none;
+    }
 }

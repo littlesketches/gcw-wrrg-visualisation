@@ -27,9 +27,9 @@
             height:             1800,
             margin: {
                 top:            30,
-                bottom:         50,
-                left:           100,
-                right:          50
+                bottom:         150,
+                left:           120,
+                right:          80
             }
         },
         geometry: {            
@@ -260,25 +260,25 @@
         // 4. RENDER NODES: Background circle shape and text
         for (nodeObj of nodeData) {
             const group = nodeGroup.append('g').classed(`node-group ${helpers.slugify(nodeObj.type)} ${helpers.slugify(nodeObj.nodeName)}`, true)
+                .attr('transform', `translate(${vis.scale.nodePosX(nodeObj.xPos)} , ${vis.scale.nodePosY(nodeObj.yPos)})`)
             group.append('circle').classed(`node-bg ${helpers.slugify(nodeObj.type)} ${helpers.slugify(nodeObj.nodeName)}`, true)
-                .attr('cx', vis.scale.nodePosX(nodeObj.xPos))
-                .attr('cy', vis.scale.nodePosY(nodeObj.yPos))
                 .attr('r',  vis.scale.nodeSize(nodeObj.value))
                 .style('fill', nodeObj.colourCSS)
 
             group.append('text').classed(`node-label ${helpers.slugify(nodeObj.type)} ${helpers.slugify(nodeObj.nodeName)}`, true)
-                .attr('x', vis.scale.nodePosX(nodeObj.xPos))
-                .attr('y', vis.scale.nodePosY(nodeObj.yPos))
+                .attr('x', 0)
+                .attr('y', 0)
                 .attr('dy', 0)
                 .text(nodeObj.nodeNameShort !== '' ? nodeObj.nodeNameShort : nodeObj.nodeName)
-                .call(helpers.wrap, vis.scale.nodeSize(nodeObj.value)* 2.5, 1.1 )
+                .call(helpers.wrap, vis.scale.nodeSize(nodeObj.value)* 2.75, 1.1 )
+
         }
 
 
         // 5. RENDER LINKS
         // a. Create link position start and end offsets (taking to prevent overlap)
         for (nodeObj of nodeData){
-            // Node outputs
+            // Node output links
             const rankedOutputNodes = nodeObj.outputNodes, 
                 outputWidths = rankedOutputNodes.map(d => vis.scale.linkWidth(d.value)),
                 cumSumOutputWidths = [0].concat([].slice.call(d3.cumsum(outputWidths))),
@@ -290,15 +290,8 @@
                 nodeObj.startOffsetX[rankedOutputNodes[i].target] = outputOffsetXArray[i]
             }
 
-            // Node inputs
-
-            const rankedInputNodes = nodeObj.inputNodes
-                // .sort( (b, a) => {
-                //     const linkData_a = data.inputTable.data_flows.filter(d.year === vis.state.year && d.lga === vis.state.region && d.sourceNode === source && d.targetNode === a.target    )
-                    
-
-                // })
-                ,
+            // Node input links
+            const rankedInputNodes = nodeObj.inputNodes,
                 inputWidths = rankedInputNodes.map(d => vis.scale.linkWidth(d.value)),
                 cumSumInputWidths = [0].concat([].slice.call(d3.cumsum(inputWidths))),
                 totalInputWidth = d3.sum(inputWidths) + settings.geometry.flowGap * (inputWidths.length - 1)
@@ -316,6 +309,7 @@
             const source = linkObj.source, target = linkObj.target,
                 sourceNodeObj = nodeData.filter(d => d.nodeName === source)[0],
                 targetNodeObj = nodeData.filter(d => d.nodeName === target)[0],
+                targetClass = nodeData.filter(d => d.nodeName === target)[0].type,
                 sourcePos = [
                     vis.scale.nodePosX(nodeData.filter(d => d.nodeName === source)[0].xPos) + sourceNodeObj.startOffsetX[target],
                     vis.scale.nodePosY(nodeData.filter(d => d.nodeName === source)[0].yPos)
@@ -326,7 +320,7 @@
                 ]
 
             const group = linkGroup.append('path')
-                .classed(`link ${helpers.slugify(linkObj.source)} ${helpers.slugify(linkObj.target)}`, true)
+                .classed(`link ${helpers.slugify(linkObj.source)} ${helpers.slugify(linkObj.target)} ${helpers.slugify(targetClass)}`, true)
                 .attr('d', vis.linkGenerators.linkVerticalOffset({ 
                         source: sourcePos, 
                         target: targetPos,
@@ -339,34 +333,55 @@
 
 
         // ADD ANNOTATION
+        // a. Section labels
         const collectionGroup  = annotationGroup.append('g')
             .attr('transform', `translate(${5}, ${vis.scale.nodePosY(0.05)})`)
         collectionGroup.append('text').classed('label-section', true)
             .attr('x',0)
             .attr('y',0)
             .attr('dy',0)
-            .text('Waste collection')
+            .text('Waste source streams')
             .call(helpers.wrap, settings.dims.margin.left, 1.1, false)
 
-
         const managementGroup  = annotationGroup.append('g')
-            .attr('transform', `translate(${5}, ${vis.scale.nodePosY(0.25)})`)
+            .attr('transform', `translate(${5}, ${vis.scale.nodePosY(0.35)})`)
         managementGroup.append('text').classed('label-section', true)
-            .attr('x',0)
-            .attr('y',0)
-            .attr('dy',0)
-            .text('Waste management')
+            .attr('x',0).attr('y',0).attr('dy',0)
+            .text('Waste and resource recovery infrastructure')
             .call(helpers.wrap, settings.dims.margin.left, 1.1, false)
 
         const endGroup  = annotationGroup.append('g')
-            .attr('transform', `translate(${5}, ${vis.scale.nodePosY(0.8)})`)
+            .attr('transform', `translate(${5}, ${vis.scale.nodePosY(0.9)})`)
         endGroup.append('text').classed('label-section', true)
-            .attr('x',0)
-            .attr('y',0)
-            .attr('dy',0)
+            .attr('x',0).attr('y',0).attr('dy',0)
             .text('Waste end destination')
             .call(helpers.wrap, settings.dims.margin.left, 1.1, false)
 
+        // b. Outcome labels
+        const disposalGroup = annotationGroup.append('g')
+            .attr('transform', `translate(${vis.scale.nodePosX(0.225)}, ${settings.dims.height - settings.dims.margin.bottom})`)
+
+        disposalGroup.append('text').classed('label-end-destination waste-disposal', true)
+            .attr('x',0).attr('y',0).attr('dy',0)
+            .text('Disposal')
+            .call(helpers.wrap, settings.dims.width * 0.2, 1.1, false)
+
+
+        const wteGroup = annotationGroup.append('g')
+            .attr('transform', `translate(${vis.scale.nodePosX(0.425)}, ${settings.dims.height - settings.dims.margin.bottom})`)
+
+        wteGroup.append('text').classed('label-end-destination waste-to-energy', true)
+            .attr('x',0).attr('y',0).attr('dy',0)
+            .text('Waste to energy')
+            .call(helpers.wrap, settings.dims.width * 0.15, 1.1, false)
+
+        const recoveredGroup = annotationGroup.append('g')
+            .attr('transform', `translate(${vis.scale.nodePosX(0.8)}, ${settings.dims.height - settings.dims.margin.bottom})`)
+
+        recoveredGroup.append('text').classed('label-end-destination recovered-product', true)
+            .attr('x',0).attr('y',0).attr('dy',0)
+            .text('Products from recovered resources')
+            .call(helpers.wrap, settings.dims.width * 0.4, 1.1, false)
 
 
     }; // end renderVis()
@@ -441,7 +456,7 @@
                     }                    
                 }            
                 if(centerVertical){
-                    text.style("transform",  "translateY(-"+(5 * (lineNumber))+"px)")
+                    text.style("transform",  "translateY(-"+(6.5 * (lineNumber))+"px)")
                 }
             })
         }
