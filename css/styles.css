@@ -46,7 +46,8 @@ aside{
     border-bottom: 3px solid #000;
 }
     .main-title{
-        font-size: 3.5vw;
+        font-size: 3.25vw;
+        margin-block-start: 0.25rem;
         margin-block-end: 0.25rem;
         letter-spacing: 0.2vw;;
     }
@@ -197,6 +198,6 @@ h2.modal-title{
 
 @media print{
     .title-block{
-        display: none;
+        margin: 2rem 0rem 1rem;
     }
 }
