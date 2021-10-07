@@ -15,17 +15,35 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.2/iframeResizer.contentWindow.js" integrity="sha512-cJ7aOLpXbec1Km9craM6xL6UOdlWf9etIz7f+cwQv2tuarLm3PLb3dv3ZqIK++SE4ui+EE0nWqKB0dOaAOv9gQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>  
     <script src="./js/data.js"></script>  
     <script src="./js/main.js"></script>  
-
 </head>
 
 <body>
-    <div class = "title-block">
-        <h1 class = "main-title">Waste data flows</h1>
-        <h2 class = "main-subtitle">An interactive visualisation of waste flows in 2019</h2>
-    </div>
-    <div id = "vis-container">
-        <svg id ="flow-vis"></svg>
-    </div>
+    <main>
+        <div class = "title-block">
+            <h1 class = "main-title">Waste data flows</h1>
+            <h2 class = "main-subtitle">An interactive visualisation of waste flows in 2019</h2>
+        </div>
+        <div id = "vis-container" class = "rotated">
+            <svg id ="flow-vis"></svg>
+        </div>
+    </main>
+    <aside>
+        <div class ="modal-container closed" >
+            <div class ="modal-wrapper">
+                <div class = 'modal-close-button'>&#x2715</div>
+                <div class = 'modal-content-container'>
+                    <h2 class = "modal-title"></h2>
+                    <div class = "modal-content"></div>
+                    <div class= "powerBI-embed-container"> </div>
+                </div>
+            </div>
+        </div>
+
+        <div class ="tooltip">
+
+        </div>
+
+    </aside>
 </body>
 
 </html>

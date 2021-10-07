@@ -1,0 +1,20 @@
+nodeName	nodeNameShort	type	colourCSS	xPos	yPos
+Municipal solid waste		source stream	#BEC2CB	0.25	0.05
+Commercial and industrial waste		source stream	#BEC2CB	0.55	0.05
+Construction and demolition waste		source stream	#BEC2CB	0.85	0.05
+Container deposit systems and other drop off	CDS and droppoffs	waste management	#D0E3C4	0.4	0.3
+Alternative waste technologies		waste management	#D0E3C4	0.2	0.3
+Materials recovery facilities		waste management	#D0E3C4	0.3	0.5
+Organics processing operations		waste management	#D0E3C4	0.7	0.5
+Hazardous waste treatment facilities		waste management	#D0E3C4	0.5	0.5
+Construction and demolition recycling operations	C&D recycling	waste management	#D0E3C4	0.9	0.5
+Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	Onshore processing	waste management	#D0E3C4	0.75	0.7
+Fuel preparation		waste management	#D0E3C4	0.4	0.7
+Incinerators		waste disposal	#E2D6D3	0.25	0.7
+Landfill		waste disposal	#F8C0BF	0.05	0.9
+Litter and illegal dumping		waste disposal	#F8C0BF	0.15	0.9
+Cement kilns and other energy recovery	Energy recovery	waste to energy	#b19cd9	0.3	0.9
+Export		export	#D0E3C4	0.45	0.9
+Land rehabilitation, agriculture, soil improvement and urban development	Products from recovered organics	recovered product	#D0E3C4	0.6	0.9
+Onshore remanufacturing of paper, metal, glass, plastic, rubber, oil etc.	Onshore remanufacturing	recovered product	#D0E3C4	0.75	0.9
+Road base		recovered product	#D0E3C4	0.9	0.9

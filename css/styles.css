@@ -29,26 +29,41 @@
 
 body{
     font-family: 'Roboto';
+    margin: 0px;
+}
+main{
+    z-index: 1;
+    transition: 800ms; 
+    margin: 0 1.5rem;
+}
+main.blur{
+    filter: blur(4px)
+}
+aside{
+    z-index: 1;
 }
 .title-block{
     border-bottom: 3px solid #000;
 }
     .main-title{
-        font-size: 5vw;
+        font-size: 3.5vw;
         margin-block-end: 0.25rem;
         letter-spacing: 0.2vw;;
     }
     .main-subtitle{
-        font-size: 2.5vw;
+        font-size: 1.75vw;
         margin-block-start: 0em;
+        margin-block-end: 0.25em;
     }
 
 
-circle.node-bg{
 
+.node-link-cover{
+    fill: #fff;
 }
-.node-bg{
+.node{
     cursor: pointer;
+    opacity: 0.3;
 }
 .node-label{
     pointer-events: none;
@@ -60,7 +75,6 @@ circle.node-bg{
          #fff -1.5px -1.5px 3px, 
          #fff 5px 5px 10px,
          #fff -5px -5px 10px;
-
 }
 
 .link{
@@ -70,9 +84,6 @@ circle.node-bg{
     stroke-width: 2px;
     mix-blend-mode: multiply;
     opacity: 0.25;
-}
-.link:hover{
-    opacity: 1;
 }
 
 .label-section{
@@ -89,7 +100,7 @@ circle.node-bg{
     stroke: #FF7276;
 }
 .link.waste-to-energy{
-    stroke: rgb(163, 68, 163);
+    stroke:#a344a3;
 }
 .link.recovered-product{
     stroke: var(--green);
@@ -105,12 +116,83 @@ circle.node-bg{
     fill: #FF7276;
 }
 .label-end-destination.waste-to-energy{
-    fill: rgb(163, 68, 163);
+    fill: #a344a3;
 }
 .label-end-destination.recovered-product{
     fill: var(--green);
 }
 
+
+/** MOUSEOVER TOOLTIP ***/
+
+
+
+/** MODAL WINDOW ***/
+.modal-container{
+    position: fixed;
+    left: 50%;
+    top: 50%; 
+    height: 100vh;
+    width: 100vw;
+    transition: 0.8s
+}
+.modal-container.closed{
+    pointer-events: none;
+    opacity: 0
+}
+.modal-wrapper{
+  position:relative; 
+  left: -50%;
+  top: -50%;
+}
+.modal-content-container{
+    position: relative;
+    z-index: 5;
+    /* height: calc(95vh - 2rem); */
+    height: calc(100vh - 8px - 5vh - 2rem);
+    /* width: calc(95vw - 2rem); */
+    width: calc(100vw - 8px - 5vw - 2rem);
+    background-color: rgba(0, 0, 0, 0.85);
+    border: #000 4px solid;
+    border-radius: 2vw;
+    margin: 2.5vh 2.5vw;
+    padding: 1rem;
+    overflow: scroll;
+
+}
+h2.modal-title{
+    color: #fff;
+    font-size: 4vw;
+    font-weight: 600;
+    border-bottom: #fff solid 2px;
+    line-height: 1.25;
+    padding-right: 2rem;
+}
+.modal-content{
+    font-size: 1rem;
+    line-height: 1.25;
+    color: #fff;
+}
+.modal-close-button{
+    z-index: 10;
+    position: absolute;
+    top: 5vh;
+    right: 5vw;
+    color: #fff;
+    font-size: 3vw;
+    cursor: pointer;
+    text-shadow:
+         #000 1.5px 1.5px 3px, 
+         #000 -1.5px -1.5px 3px, 
+         #000 5px 5px 10px,
+         #000 -5px -5px 10px;
+}    
+
+
+.powerBI-embed-container iframe{
+    width: 90vw;
+    height: 55vw;
+}
 
 
 @media print{

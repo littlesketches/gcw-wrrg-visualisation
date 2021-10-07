@@ -1,0 +1,560 @@
+year	lga	sourceNode	targetNode	vLength1	vLength2	rankIn	All materials	Paper and cardboard	Liquid paperboard	Glass	PET (1)	HDPE (2)	PVC (3)	LDPE (4)	PP (5)	PS (6)	Other plastic (7)	Rigid plastics	Soft plastics (film)	Steel cans	Aluminum cans and foil	Food organics	Garden organics	Wood and timber	Textile, leather and rubber	Hazardous	Nappies and sanitary	Prohibited	Other	Aerosol cans
+2019	All LGAs	Municipal solid waste	Landfill	0.013	0.150	1	57,378																							
+2019	All LGAs	Municipal solid waste	Litter and illegal dumping	0.100	0.250	0	6,375																							
+2019	All LGAs	Municipal solid waste	Alternative waste technologies	0.400	0.750	0	19,126																							
+2019	All LGAs	Municipal solid waste	Materials recovery facilities	0.500	0.900	0	25,501																							
+2019	All LGAs	Municipal solid waste	Container deposit systems and other drop off	0.475	1.000	0	6,375																							
+2019	All LGAs	Municipal solid waste	Hazardous waste treatment facilities	0.200	0.650	0	3,188																							
+2019	All LGAs	Municipal solid waste	Organics processing operations	0.175	0.700	2	9,563																							
+2019	All LGAs	Commercial and industrial waste	Landfill	0.013	0.160	2	63,115																							
+2019	All LGAs	Commercial and industrial waste	Alternative waste technologies	0.300	1.000	0	32,514																							
+2019	All LGAs	Commercial and industrial waste	Materials recovery facilities	0.225	0.500	0	43,352																							
+2019	All LGAs	Commercial and industrial waste	Container deposit systems and other drop off	0.400	0.950	0	10,838																							
+2019	All LGAs	Commercial and industrial waste	Hazardous waste treatment facilities	0.550	0.950	0	16,257																							
+2019	All LGAs	Commercial and industrial waste	Incinerators	0.500	0.900	0	16,257																							
+2019	All LGAs	Commercial and industrial waste	Land rehabilitation, agriculture, soil improvement and urban development	0.250	0.450	2	4,335																							
+2019	All LGAs	Commercial and industrial waste	Organics processing operations	0.250	0.650	3	16,257																							
+2019	All LGAs	Commercial and industrial waste	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.075	0.350	4	4,335																							
+2019	All LGAs	Construction and demolition waste	Landfill	0.013	0.170	3	15,301																							
+2019	All LGAs	Construction and demolition waste	Litter and illegal dumping	0.025	0.250	0	5,100																							
+2019	All LGAs	Construction and demolition waste	Organics processing operations	0.250	0.750	4	10,200																							
+2019	All LGAs	Construction and demolition waste	Construction and demolition recycling operations	0.250	0.750	0	102,005																							
+2019	All LGAs	Alternative waste technologies	Landfill	0.000	0.250	4	10,328																							
+2019	All LGAs	Alternative waste technologies	Fuel preparation	0.550	1.000	0	5,164																							
+2019	All LGAs	Alternative waste technologies	Alternative waste technologies	0.200	0.750	1	15,492																							
+2019	All LGAs	Alternative waste technologies	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.000	0.800	2	20,656																							
+2019	All LGAs	Container deposit systems and other drop off	Fuel preparation	0.250	1.000	0	861																							
+2019	All LGAs	Container deposit systems and other drop off	Organics processing operations	0.100	0.900	1	861																							
+2019	All LGAs	Container deposit systems and other drop off	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.013	0.450	3	15,492																							
+2019	All LGAs	Materials recovery facilities	Landfill	0.000	0.350	5	13,771																							
+2019	All LGAs	Materials recovery facilities	Export	0.600	0.950	1	6,885																							
+2019	All LGAs	Materials recovery facilities	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.000	0.750	1	48,197																							
+2019	All LGAs	Hazardous waste treatment facilities	Landfill	0.000	0.500	6	14,583																							
+2019	All LGAs	Hazardous waste treatment facilities	Fuel preparation	0.000	1.000	0	4,861																							
+2019	All LGAs	Organics processing operations	Landfill	0.000	0.700	7	3,602																							
+2019	All LGAs	Organics processing operations	Fuel preparation	0.250	1.000	0	7,204																							
+2019	All LGAs	Organics processing operations	Land rehabilitation, agriculture, soil improvement and urban development	0.250	0.750	3	25,214																							
+2019	All LGAs	Incinerators	Landfill	0.000	0.800	8	813																							
+2019	All LGAs	Construction and demolition recycling operations	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.250	0.750	5	5,100																							
+2019	All LGAs	Construction and demolition recycling operations	Road base	0.250	0.750	2	96,905																							
+2019	All LGAs	Fuel preparation	Cement kilns and other energy recovery	0.100	0.900	0	11,906																							
+2019	All LGAs	Fuel preparation	Export	0.100	0.750	2	1,323																							
+2019	All LGAs	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	Export	0.000	0.900	3	7,319																							
+2019	All LGAs	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	Onshore remanufacturing of paper, metal, glass, plastic, rubber, oil etc.	0.000	1.000	0	58,551																							
+2019	All LGAs	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	Road base	0.000	0.750	1	7,319																							
+2019	Ararat	Municipal solid waste	Landfill	0.013	0.150	1																								
+2019	Ararat	Municipal solid waste	Litter and illegal dumping	0.100	0.250	0																								
+2019	Ararat	Municipal solid waste	Alternative waste technologies	0.400	0.750	0																								
+2019	Ararat	Municipal solid waste	Materials recovery facilities	0.500	0.900	0																								
+2019	Ararat	Municipal solid waste	Container deposit systems and other drop off	0.475	1.000	0																								
+2019	Ararat	Municipal solid waste	Hazardous waste treatment facilities	0.200	0.650	0																								
+2019	Ararat	Municipal solid waste	Organics processing operations	0.175	0.700	2																								
+2019	Ararat	Commercial and industrial waste	Landfill	0.013	0.160	2																								
+2019	Ararat	Commercial and industrial waste	Alternative waste technologies	0.300	1.000	0																								
+2019	Ararat	Commercial and industrial waste	Materials recovery facilities	0.225	0.500	0																								
+2019	Ararat	Commercial and industrial waste	Container deposit systems and other drop off	0.400	0.950	0																								
+2019	Ararat	Commercial and industrial waste	Hazardous waste treatment facilities	0.550	0.950	0																								
+2019	Ararat	Commercial and industrial waste	Incinerators	0.500	0.900	0																								
+2019	Ararat	Commercial and industrial waste	Land rehabilitation, agriculture, soil improvement and urban development	0.250	0.450	2																								
+2019	Ararat	Commercial and industrial waste	Organics processing operations	0.250	0.650	3																								
+2019	Ararat	Commercial and industrial waste	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.075	0.350	4																								
+2019	Ararat	Construction and demolition waste	Landfill	0.013	0.170	3																								
+2019	Ararat	Construction and demolition waste	Litter and illegal dumping	0.025	0.250	0																								
+2019	Ararat	Construction and demolition waste	Organics processing operations	0.250	0.750	4																								
+2019	Ararat	Construction and demolition waste	Construction and demolition recycling operations	0.250	0.750	0																								
+2019	Ararat	Alternative waste technologies	Landfill	0.000	0.250	4																								
+2019	Ararat	Alternative waste technologies	Fuel preparation	0.550	1.000	0																								
+2019	Ararat	Alternative waste technologies	Alternative waste technologies	0.200	0.750	1																								
+2019	Ararat	Alternative waste technologies	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.000	0.800	2																								
+2019	Ararat	Container deposit systems and other drop off	Fuel preparation	0.250	1.000	0																								
+2019	Ararat	Container deposit systems and other drop off	Organics processing operations	0.100	0.900	1																								
+2019	Ararat	Container deposit systems and other drop off	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.013	0.450	3																								
+2019	Ararat	Materials recovery facilities	Landfill	0.000	0.350	5																								
+2019	Ararat	Materials recovery facilities	Export	0.600	0.950	1																								
+2019	Ararat	Materials recovery facilities	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.000	0.750	1																								
+2019	Ararat	Hazardous waste treatment facilities	Landfill	0.000	0.500	6																								
+2019	Ararat	Hazardous waste treatment facilities	Fuel preparation	0.000	1.000	0																								
+2019	Ararat	Organics processing operations	Landfill	0.000	0.700	7																								
+2019	Ararat	Organics processing operations	Fuel preparation	0.250	1.000	0																								
+2019	Ararat	Organics processing operations	Land rehabilitation, agriculture, soil improvement and urban development	0.250	0.750	3																								
+2019	Ararat	Incinerators	Landfill	0.000	0.800	8																								
+2019	Ararat	Construction and demolition recycling operations	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.250	0.750	5																								
+2019	Ararat	Construction and demolition recycling operations	Road base	0.250	0.750	2																								
+2019	Ararat	Fuel preparation	Cement kilns and other energy recovery	0.100	0.900	0																								
+2019	Ararat	Fuel preparation	Export	0.100	0.750	2																								
+2019	Ararat	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	Export	0.000	0.900	3																								
+2019	Ararat	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	Onshore remanufacturing of paper, metal, glass, plastic, rubber, oil etc.	0.000	1.000	0																								
+2019	Ararat	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	Road base	0.000	0.750	1																								
+2019	Ballarat	Municipal solid waste	Landfill	0.013	0.150	1																								
+2019	Ballarat	Municipal solid waste	Litter and illegal dumping	0.100	0.250	0																								
+2019	Ballarat	Municipal solid waste	Alternative waste technologies	0.400	0.750	0																								
+2019	Ballarat	Municipal solid waste	Materials recovery facilities	0.500	0.900	0																								
+2019	Ballarat	Municipal solid waste	Container deposit systems and other drop off	0.475	1.000	0																								
+2019	Ballarat	Municipal solid waste	Hazardous waste treatment facilities	0.200	0.650	0																								
+2019	Ballarat	Municipal solid waste	Organics processing operations	0.175	0.700	2																								
+2019	Ballarat	Commercial and industrial waste	Landfill	0.013	0.160	2																								
+2019	Ballarat	Commercial and industrial waste	Alternative waste technologies	0.300	1.000	0																								
+2019	Ballarat	Commercial and industrial waste	Materials recovery facilities	0.225	0.500	0																								
+2019	Ballarat	Commercial and industrial waste	Container deposit systems and other drop off	0.400	0.950	0																								
+2019	Ballarat	Commercial and industrial waste	Hazardous waste treatment facilities	0.550	0.950	0																								
+2019	Ballarat	Commercial and industrial waste	Incinerators	0.500	0.900	0																								
+2019	Ballarat	Commercial and industrial waste	Land rehabilitation, agriculture, soil improvement and urban development	0.250	0.450	2																								
+2019	Ballarat	Commercial and industrial waste	Organics processing operations	0.250	0.650	3																								
+2019	Ballarat	Commercial and industrial waste	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.075	0.350	4																								
+2019	Ballarat	Construction and demolition waste	Landfill	0.013	0.170	3																								
+2019	Ballarat	Construction and demolition waste	Litter and illegal dumping	0.025	0.250	0																								
+2019	Ballarat	Construction and demolition waste	Organics processing operations	0.250	0.750	4																								
+2019	Ballarat	Construction and demolition waste	Construction and demolition recycling operations	0.250	0.750	0																								
+2019	Ballarat	Alternative waste technologies	Landfill	0.000	0.250	4																								
+2019	Ballarat	Alternative waste technologies	Fuel preparation	0.550	1.000	0																								
+2019	Ballarat	Alternative waste technologies	Alternative waste technologies	0.200	0.750	1																								
+2019	Ballarat	Alternative waste technologies	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.000	0.800	2																								
+2019	Ballarat	Container deposit systems and other drop off	Fuel preparation	0.250	1.000	0																								
+2019	Ballarat	Container deposit systems and other drop off	Organics processing operations	0.100	0.900	1																								
+2019	Ballarat	Container deposit systems and other drop off	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.013	0.450	3																								
+2019	Ballarat	Materials recovery facilities	Landfill	0.000	0.350	5																								
+2019	Ballarat	Materials recovery facilities	Export	0.600	0.950	1																								
+2019	Ballarat	Materials recovery facilities	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.000	0.750	1																								
+2019	Ballarat	Hazardous waste treatment facilities	Landfill	0.000	0.500	6																								
+2019	Ballarat	Hazardous waste treatment facilities	Fuel preparation	0.000	1.000	0																								
+2019	Ballarat	Organics processing operations	Landfill	0.000	0.700	7																								
+2019	Ballarat	Organics processing operations	Fuel preparation	0.250	1.000	0																								
+2019	Ballarat	Organics processing operations	Land rehabilitation, agriculture, soil improvement and urban development	0.250	0.750	3																								
+2019	Ballarat	Incinerators	Landfill	0.000	0.800	8																								
+2019	Ballarat	Construction and demolition recycling operations	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.250	0.750	5																								
+2019	Ballarat	Construction and demolition recycling operations	Road base	0.250	0.750	2																								
+2019	Ballarat	Fuel preparation	Cement kilns and other energy recovery	0.100	0.900	0																								
+2019	Ballarat	Fuel preparation	Export	0.100	0.750	2																								
+2019	Ballarat	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	Export	0.000	0.900	3																								
+2019	Ballarat	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	Onshore remanufacturing of paper, metal, glass, plastic, rubber, oil etc.	0.000	1.000	0																								
+2019	Ballarat	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	Road base	0.000	0.750	1																								
+2019	Central Goldfields	Municipal solid waste	Landfill	0.013	0.150	1																								
+2019	Central Goldfields	Municipal solid waste	Litter and illegal dumping	0.100	0.250	0																								
+2019	Central Goldfields	Municipal solid waste	Alternative waste technologies	0.400	0.750	0																								
+2019	Central Goldfields	Municipal solid waste	Materials recovery facilities	0.500	0.900	0																								
+2019	Central Goldfields	Municipal solid waste	Container deposit systems and other drop off	0.475	1.000	0																								
+2019	Central Goldfields	Municipal solid waste	Hazardous waste treatment facilities	0.200	0.650	0																								
+2019	Central Goldfields	Municipal solid waste	Organics processing operations	0.175	0.700	2																								
+2019	Central Goldfields	Commercial and industrial waste	Landfill	0.013	0.160	2																								
+2019	Central Goldfields	Commercial and industrial waste	Alternative waste technologies	0.300	1.000	0																								
+2019	Central Goldfields	Commercial and industrial waste	Materials recovery facilities	0.225	0.500	0																								
+2019	Central Goldfields	Commercial and industrial waste	Container deposit systems and other drop off	0.400	0.950	0																								
+2019	Central Goldfields	Commercial and industrial waste	Hazardous waste treatment facilities	0.550	0.950	0																								
+2019	Central Goldfields	Commercial and industrial waste	Incinerators	0.500	0.900	0																								
+2019	Central Goldfields	Commercial and industrial waste	Land rehabilitation, agriculture, soil improvement and urban development	0.250	0.450	2																								
+2019	Central Goldfields	Commercial and industrial waste	Organics processing operations	0.250	0.650	3																								
+2019	Central Goldfields	Commercial and industrial waste	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.075	0.350	4																								
+2019	Central Goldfields	Construction and demolition waste	Landfill	0.013	0.170	3																								
+2019	Central Goldfields	Construction and demolition waste	Litter and illegal dumping	0.025	0.250	0																								
+2019	Central Goldfields	Construction and demolition waste	Organics processing operations	0.250	0.750	4																								
+2019	Central Goldfields	Construction and demolition waste	Construction and demolition recycling operations	0.250	0.750	0																								
+2019	Central Goldfields	Alternative waste technologies	Landfill	0.000	0.250	4																								
+2019	Central Goldfields	Alternative waste technologies	Fuel preparation	0.550	1.000	0																								
+2019	Central Goldfields	Alternative waste technologies	Alternative waste technologies	0.200	0.750	1																								
+2019	Central Goldfields	Alternative waste technologies	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.000	0.800	2																								
+2019	Central Goldfields	Container deposit systems and other drop off	Fuel preparation	0.250	1.000	0																								
+2019	Central Goldfields	Container deposit systems and other drop off	Organics processing operations	0.100	0.900	1																								
+2019	Central Goldfields	Container deposit systems and other drop off	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.013	0.450	3																								
+2019	Central Goldfields	Materials recovery facilities	Landfill	0.000	0.350	5																								
+2019	Central Goldfields	Materials recovery facilities	Export	0.600	0.950	1																								
+2019	Central Goldfields	Materials recovery facilities	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.000	0.750	1																								
+2019	Central Goldfields	Hazardous waste treatment facilities	Landfill	0.000	0.500	6																								
+2019	Central Goldfields	Hazardous waste treatment facilities	Fuel preparation	0.000	1.000	0																								
+2019	Central Goldfields	Organics processing operations	Landfill	0.000	0.700	7																								
+2019	Central Goldfields	Organics processing operations	Fuel preparation	0.250	1.000	0																								
+2019	Central Goldfields	Organics processing operations	Land rehabilitation, agriculture, soil improvement and urban development	0.250	0.750	3																								
+2019	Central Goldfields	Incinerators	Landfill	0.000	0.800	8																								
+2019	Central Goldfields	Construction and demolition recycling operations	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.250	0.750	5																								
+2019	Central Goldfields	Construction and demolition recycling operations	Road base	0.250	0.750	2																								
+2019	Central Goldfields	Fuel preparation	Cement kilns and other energy recovery	0.100	0.900	0																								
+2019	Central Goldfields	Fuel preparation	Export	0.100	0.750	2																								
+2019	Central Goldfields	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	Export	0.000	0.900	3																								
+2019	Central Goldfields	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	Onshore remanufacturing of paper, metal, glass, plastic, rubber, oil etc.	0.000	1.000	0																								
+2019	Central Goldfields	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	Road base	0.000	0.750	1																								
+2019	Golden Plains	Municipal solid waste	Landfill	0.013	0.150	1																								
+2019	Golden Plains	Municipal solid waste	Litter and illegal dumping	0.100	0.250	0																								
+2019	Golden Plains	Municipal solid waste	Alternative waste technologies	0.400	0.750	0																								
+2019	Golden Plains	Municipal solid waste	Materials recovery facilities	0.500	0.900	0																								
+2019	Golden Plains	Municipal solid waste	Container deposit systems and other drop off	0.475	1.000	0																								
+2019	Golden Plains	Municipal solid waste	Hazardous waste treatment facilities	0.200	0.650	0																								
+2019	Golden Plains	Municipal solid waste	Organics processing operations	0.175	0.700	2																								
+2019	Golden Plains	Commercial and industrial waste	Landfill	0.013	0.160	2																								
+2019	Golden Plains	Commercial and industrial waste	Alternative waste technologies	0.300	1.000	0																								
+2019	Golden Plains	Commercial and industrial waste	Materials recovery facilities	0.225	0.500	0																								
+2019	Golden Plains	Commercial and industrial waste	Container deposit systems and other drop off	0.400	0.950	0																								
+2019	Golden Plains	Commercial and industrial waste	Hazardous waste treatment facilities	0.550	0.950	0																								
+2019	Golden Plains	Commercial and industrial waste	Incinerators	0.500	0.900	0																								
+2019	Golden Plains	Commercial and industrial waste	Land rehabilitation, agriculture, soil improvement and urban development	0.250	0.450	2																								
+2019	Golden Plains	Commercial and industrial waste	Organics processing operations	0.250	0.650	3																								
+2019	Golden Plains	Commercial and industrial waste	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.075	0.350	4																								
+2019	Golden Plains	Construction and demolition waste	Landfill	0.013	0.170	3																								
+2019	Golden Plains	Construction and demolition waste	Litter and illegal dumping	0.025	0.250	0																								
+2019	Golden Plains	Construction and demolition waste	Organics processing operations	0.250	0.750	4																								
+2019	Golden Plains	Construction and demolition waste	Construction and demolition recycling operations	0.250	0.750	0																								
+2019	Golden Plains	Alternative waste technologies	Landfill	0.000	0.250	4																								
+2019	Golden Plains	Alternative waste technologies	Fuel preparation	0.550	1.000	0																								
+2019	Golden Plains	Alternative waste technologies	Alternative waste technologies	0.200	0.750	1																								
+2019	Golden Plains	Alternative waste technologies	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.000	0.800	2																								
+2019	Golden Plains	Container deposit systems and other drop off	Fuel preparation	0.250	1.000	0																								
+2019	Golden Plains	Container deposit systems and other drop off	Organics processing operations	0.100	0.900	1																								
+2019	Golden Plains	Container deposit systems and other drop off	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.013	0.450	3																								
+2019	Golden Plains	Materials recovery facilities	Landfill	0.000	0.350	5																								
+2019	Golden Plains	Materials recovery facilities	Export	0.600	0.950	1																								
+2019	Golden Plains	Materials recovery facilities	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.000	0.750	1																								
+2019	Golden Plains	Hazardous waste treatment facilities	Landfill	0.000	0.500	6																								
+2019	Golden Plains	Hazardous waste treatment facilities	Fuel preparation	0.000	1.000	0																								
+2019	Golden Plains	Organics processing operations	Landfill	0.000	0.700	7																								
+2019	Golden Plains	Organics processing operations	Fuel preparation	0.250	1.000	0																								
+2019	Golden Plains	Organics processing operations	Land rehabilitation, agriculture, soil improvement and urban development	0.250	0.750	3																								
+2019	Golden Plains	Incinerators	Landfill	0.000	0.800	8																								
+2019	Golden Plains	Construction and demolition recycling operations	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.250	0.750	5																								
+2019	Golden Plains	Construction and demolition recycling operations	Road base	0.250	0.750	2																								
+2019	Golden Plains	Fuel preparation	Cement kilns and other energy recovery	0.100	0.900	0																								
+2019	Golden Plains	Fuel preparation	Export	0.100	0.750	2																								
+2019	Golden Plains	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	Export	0.000	0.900	3																								
+2019	Golden Plains	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	Onshore remanufacturing of paper, metal, glass, plastic, rubber, oil etc.	0.000	1.000	0																								
+2019	Golden Plains	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	Road base	0.000	0.750	1																								
+2019	Hepburn	Municipal solid waste	Landfill	0.013	0.150	1																								
+2019	Hepburn	Municipal solid waste	Litter and illegal dumping	0.100	0.250	0																								
+2019	Hepburn	Municipal solid waste	Alternative waste technologies	0.400	0.750	0																								
+2019	Hepburn	Municipal solid waste	Materials recovery facilities	0.500	0.900	0																								
+2019	Hepburn	Municipal solid waste	Container deposit systems and other drop off	0.475	1.000	0																								
+2019	Hepburn	Municipal solid waste	Hazardous waste treatment facilities	0.200	0.650	0																								
+2019	Hepburn	Municipal solid waste	Organics processing operations	0.175	0.700	2																								
+2019	Hepburn	Commercial and industrial waste	Landfill	0.013	0.160	2																								
+2019	Hepburn	Commercial and industrial waste	Alternative waste technologies	0.300	1.000	0																								
+2019	Hepburn	Commercial and industrial waste	Materials recovery facilities	0.225	0.500	0																								
+2019	Hepburn	Commercial and industrial waste	Container deposit systems and other drop off	0.400	0.950	0																								
+2019	Hepburn	Commercial and industrial waste	Hazardous waste treatment facilities	0.550	0.950	0																								
+2019	Hepburn	Commercial and industrial waste	Incinerators	0.500	0.900	0																								
+2019	Hepburn	Commercial and industrial waste	Land rehabilitation, agriculture, soil improvement and urban development	0.250	0.450	2																								
+2019	Hepburn	Commercial and industrial waste	Organics processing operations	0.250	0.650	3																								
+2019	Hepburn	Commercial and industrial waste	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.075	0.350	4																								
+2019	Hepburn	Construction and demolition waste	Landfill	0.013	0.170	3																								
+2019	Hepburn	Construction and demolition waste	Litter and illegal dumping	0.025	0.250	0																								
+2019	Hepburn	Construction and demolition waste	Organics processing operations	0.250	0.750	4																								
+2019	Hepburn	Construction and demolition waste	Construction and demolition recycling operations	0.250	0.750	0																								
+2019	Hepburn	Alternative waste technologies	Landfill	0.000	0.250	4																								
+2019	Hepburn	Alternative waste technologies	Fuel preparation	0.550	1.000	0																								
+2019	Hepburn	Alternative waste technologies	Alternative waste technologies	0.200	0.750	1																								
+2019	Hepburn	Alternative waste technologies	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.000	0.800	2																								
+2019	Hepburn	Container deposit systems and other drop off	Fuel preparation	0.250	1.000	0																								
+2019	Hepburn	Container deposit systems and other drop off	Organics processing operations	0.100	0.900	1																								
+2019	Hepburn	Container deposit systems and other drop off	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.013	0.450	3																								
+2019	Hepburn	Materials recovery facilities	Landfill	0.000	0.350	5																								
+2019	Hepburn	Materials recovery facilities	Export	0.600	0.950	1																								
+2019	Hepburn	Materials recovery facilities	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.000	0.750	1																								
+2019	Hepburn	Hazardous waste treatment facilities	Landfill	0.000	0.500	6																								
+2019	Hepburn	Hazardous waste treatment facilities	Fuel preparation	0.000	1.000	0																								
+2019	Hepburn	Organics processing operations	Landfill	0.000	0.700	7																								
+2019	Hepburn	Organics processing operations	Fuel preparation	0.250	1.000	0																								
+2019	Hepburn	Organics processing operations	Land rehabilitation, agriculture, soil improvement and urban development	0.250	0.750	3																								
+2019	Hepburn	Incinerators	Landfill	0.000	0.800	8																								
+2019	Hepburn	Construction and demolition recycling operations	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.250	0.750	5																								
+2019	Hepburn	Construction and demolition recycling operations	Road base	0.250	0.750	2																								
+2019	Hepburn	Fuel preparation	Cement kilns and other energy recovery	0.100	0.900	0																								
+2019	Hepburn	Fuel preparation	Export	0.100	0.750	2																								
+2019	Hepburn	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	Export	0.000	0.900	3																								
+2019	Hepburn	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	Onshore remanufacturing of paper, metal, glass, plastic, rubber, oil etc.	0.000	1.000	0																								
+2019	Hepburn	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	Road base	0.000	0.750	1																								
+2019	Hindmarsh	Municipal solid waste	Landfill	0.013	0.150	1																								
+2019	Hindmarsh	Municipal solid waste	Litter and illegal dumping	0.100	0.250	0																								
+2019	Hindmarsh	Municipal solid waste	Alternative waste technologies	0.400	0.750	0																								
+2019	Hindmarsh	Municipal solid waste	Materials recovery facilities	0.500	0.900	0																								
+2019	Hindmarsh	Municipal solid waste	Container deposit systems and other drop off	0.475	1.000	0																								
+2019	Hindmarsh	Municipal solid waste	Hazardous waste treatment facilities	0.200	0.650	0																								
+2019	Hindmarsh	Municipal solid waste	Organics processing operations	0.175	0.700	2																								
+2019	Hindmarsh	Commercial and industrial waste	Landfill	0.013	0.160	2																								
+2019	Hindmarsh	Commercial and industrial waste	Alternative waste technologies	0.300	1.000	0																								
+2019	Hindmarsh	Commercial and industrial waste	Materials recovery facilities	0.225	0.500	0																								
+2019	Hindmarsh	Commercial and industrial waste	Container deposit systems and other drop off	0.400	0.950	0																								
+2019	Hindmarsh	Commercial and industrial waste	Hazardous waste treatment facilities	0.550	0.950	0																								
+2019	Hindmarsh	Commercial and industrial waste	Incinerators	0.500	0.900	0																								
+2019	Hindmarsh	Commercial and industrial waste	Land rehabilitation, agriculture, soil improvement and urban development	0.250	0.450	2																								
+2019	Hindmarsh	Commercial and industrial waste	Organics processing operations	0.250	0.650	3																								
+2019	Hindmarsh	Commercial and industrial waste	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.075	0.350	4																								
+2019	Hindmarsh	Construction and demolition waste	Landfill	0.013	0.170	3																								
+2019	Hindmarsh	Construction and demolition waste	Litter and illegal dumping	0.025	0.250	0																								
+2019	Hindmarsh	Construction and demolition waste	Organics processing operations	0.250	0.750	4																								
+2019	Hindmarsh	Construction and demolition waste	Construction and demolition recycling operations	0.250	0.750	0																								
+2019	Hindmarsh	Alternative waste technologies	Landfill	0.000	0.250	4																								
+2019	Hindmarsh	Alternative waste technologies	Fuel preparation	0.550	1.000	0																								
+2019	Hindmarsh	Alternative waste technologies	Alternative waste technologies	0.200	0.750	1																								
+2019	Hindmarsh	Alternative waste technologies	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.000	0.800	2																								
+2019	Hindmarsh	Container deposit systems and other drop off	Fuel preparation	0.250	1.000	0																								
+2019	Hindmarsh	Container deposit systems and other drop off	Organics processing operations	0.100	0.900	1																								
+2019	Hindmarsh	Container deposit systems and other drop off	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.013	0.450	3																								
+2019	Hindmarsh	Materials recovery facilities	Landfill	0.000	0.350	5																								
+2019	Hindmarsh	Materials recovery facilities	Export	0.600	0.950	1																								
+2019	Hindmarsh	Materials recovery facilities	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.000	0.750	1																								
+2019	Hindmarsh	Hazardous waste treatment facilities	Landfill	0.000	0.500	6																								
+2019	Hindmarsh	Hazardous waste treatment facilities	Fuel preparation	0.000	1.000	0																								
+2019	Hindmarsh	Organics processing operations	Landfill	0.000	0.700	7																								
+2019	Hindmarsh	Organics processing operations	Fuel preparation	0.250	1.000	0																								
+2019	Hindmarsh	Organics processing operations	Land rehabilitation, agriculture, soil improvement and urban development	0.250	0.750	3																								
+2019	Hindmarsh	Incinerators	Landfill	0.000	0.800	8																								
+2019	Hindmarsh	Construction and demolition recycling operations	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.250	0.750	5																								
+2019	Hindmarsh	Construction and demolition recycling operations	Road base	0.250	0.750	2																								
+2019	Hindmarsh	Fuel preparation	Cement kilns and other energy recovery	0.100	0.900	0																								
+2019	Hindmarsh	Fuel preparation	Export	0.100	0.750	2																								
+2019	Hindmarsh	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	Export	0.000	0.900	3																								
+2019	Hindmarsh	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	Onshore remanufacturing of paper, metal, glass, plastic, rubber, oil etc.	0.000	1.000	0																								
+2019	Hindmarsh	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	Road base	0.000	0.750	1																								
+2019	Horsham	Municipal solid waste	Landfill	0.013	0.150	1																								
+2019	Horsham	Municipal solid waste	Litter and illegal dumping	0.100	0.250	0																								
+2019	Horsham	Municipal solid waste	Alternative waste technologies	0.400	0.750	0																								
+2019	Horsham	Municipal solid waste	Materials recovery facilities	0.500	0.900	0																								
+2019	Horsham	Municipal solid waste	Container deposit systems and other drop off	0.475	1.000	0																								
+2019	Horsham	Municipal solid waste	Hazardous waste treatment facilities	0.200	0.650	0																								
+2019	Horsham	Municipal solid waste	Organics processing operations	0.175	0.700	2																								
+2019	Horsham	Commercial and industrial waste	Landfill	0.013	0.160	2																								
+2019	Horsham	Commercial and industrial waste	Alternative waste technologies	0.300	1.000	0																								
+2019	Horsham	Commercial and industrial waste	Materials recovery facilities	0.225	0.500	0																								
+2019	Horsham	Commercial and industrial waste	Container deposit systems and other drop off	0.400	0.950	0																								
+2019	Horsham	Commercial and industrial waste	Hazardous waste treatment facilities	0.550	0.950	0																								
+2019	Horsham	Commercial and industrial waste	Incinerators	0.500	0.900	0																								
+2019	Horsham	Commercial and industrial waste	Land rehabilitation, agriculture, soil improvement and urban development	0.250	0.450	2																								
+2019	Horsham	Commercial and industrial waste	Organics processing operations	0.250	0.650	3																								
+2019	Horsham	Commercial and industrial waste	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.075	0.350	4																								
+2019	Horsham	Construction and demolition waste	Landfill	0.013	0.170	3																								
+2019	Horsham	Construction and demolition waste	Litter and illegal dumping	0.025	0.250	0																								
+2019	Horsham	Construction and demolition waste	Organics processing operations	0.250	0.750	4																								
+2019	Horsham	Construction and demolition waste	Construction and demolition recycling operations	0.250	0.750	0																								
+2019	Horsham	Alternative waste technologies	Landfill	0.000	0.250	4																								
+2019	Horsham	Alternative waste technologies	Fuel preparation	0.550	1.000	0																								
+2019	Horsham	Alternative waste technologies	Alternative waste technologies	0.200	0.750	1																								
+2019	Horsham	Alternative waste technologies	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.000	0.800	2																								
+2019	Horsham	Container deposit systems and other drop off	Fuel preparation	0.250	1.000	0																								
+2019	Horsham	Container deposit systems and other drop off	Organics processing operations	0.100	0.900	1																								
+2019	Horsham	Container deposit systems and other drop off	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.013	0.450	3																								
+2019	Horsham	Materials recovery facilities	Landfill	0.000	0.350	5																								
+2019	Horsham	Materials recovery facilities	Export	0.600	0.950	1																								
+2019	Horsham	Materials recovery facilities	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.000	0.750	1																								
+2019	Horsham	Hazardous waste treatment facilities	Landfill	0.000	0.500	6																								
+2019	Horsham	Hazardous waste treatment facilities	Fuel preparation	0.000	1.000	0																								
+2019	Horsham	Organics processing operations	Landfill	0.000	0.700	7																								
+2019	Horsham	Organics processing operations	Fuel preparation	0.250	1.000	0																								
+2019	Horsham	Organics processing operations	Land rehabilitation, agriculture, soil improvement and urban development	0.250	0.750	3																								
+2019	Horsham	Incinerators	Landfill	0.000	0.800	8																								
+2019	Horsham	Construction and demolition recycling operations	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.250	0.750	5																								
+2019	Horsham	Construction and demolition recycling operations	Road base	0.250	0.750	2																								
+2019	Horsham	Fuel preparation	Cement kilns and other energy recovery	0.100	0.900	0																								
+2019	Horsham	Fuel preparation	Export	0.100	0.750	2																								
+2019	Horsham	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	Export	0.000	0.900	3																								
+2019	Horsham	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	Onshore remanufacturing of paper, metal, glass, plastic, rubber, oil etc.	0.000	1.000	0																								
+2019	Horsham	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	Road base	0.000	0.750	1																								
+2019	Moorabool	Municipal solid waste	Landfill	0.013	0.150	1																								
+2019	Moorabool	Municipal solid waste	Litter and illegal dumping	0.100	0.250	0																								
+2019	Moorabool	Municipal solid waste	Alternative waste technologies	0.400	0.750	0																								
+2019	Moorabool	Municipal solid waste	Materials recovery facilities	0.500	0.900	0																								
+2019	Moorabool	Municipal solid waste	Container deposit systems and other drop off	0.475	1.000	0																								
+2019	Moorabool	Municipal solid waste	Hazardous waste treatment facilities	0.200	0.650	0																								
+2019	Moorabool	Municipal solid waste	Organics processing operations	0.175	0.700	2																								
+2019	Moorabool	Commercial and industrial waste	Landfill	0.013	0.160	2																								
+2019	Moorabool	Commercial and industrial waste	Alternative waste technologies	0.300	1.000	0																								
+2019	Moorabool	Commercial and industrial waste	Materials recovery facilities	0.225	0.500	0																								
+2019	Moorabool	Commercial and industrial waste	Container deposit systems and other drop off	0.400	0.950	0																								
+2019	Moorabool	Commercial and industrial waste	Hazardous waste treatment facilities	0.550	0.950	0																								
+2019	Moorabool	Commercial and industrial waste	Incinerators	0.500	0.900	0																								
+2019	Moorabool	Commercial and industrial waste	Land rehabilitation, agriculture, soil improvement and urban development	0.250	0.450	2																								
+2019	Moorabool	Commercial and industrial waste	Organics processing operations	0.250	0.650	3																								
+2019	Moorabool	Commercial and industrial waste	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.075	0.350	4																								
+2019	Moorabool	Construction and demolition waste	Landfill	0.013	0.170	3																								
+2019	Moorabool	Construction and demolition waste	Litter and illegal dumping	0.025	0.250	0																								
+2019	Moorabool	Construction and demolition waste	Organics processing operations	0.250	0.750	4																								
+2019	Moorabool	Construction and demolition waste	Construction and demolition recycling operations	0.250	0.750	0																								
+2019	Moorabool	Alternative waste technologies	Landfill	0.000	0.250	4																								
+2019	Moorabool	Alternative waste technologies	Fuel preparation	0.550	1.000	0																								
+2019	Moorabool	Alternative waste technologies	Alternative waste technologies	0.200	0.750	1																								
+2019	Moorabool	Alternative waste technologies	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.000	0.800	2																								
+2019	Moorabool	Container deposit systems and other drop off	Fuel preparation	0.250	1.000	0																								
+2019	Moorabool	Container deposit systems and other drop off	Organics processing operations	0.100	0.900	1																								
+2019	Moorabool	Container deposit systems and other drop off	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.013	0.450	3																								
+2019	Moorabool	Materials recovery facilities	Landfill	0.000	0.350	5																								
+2019	Moorabool	Materials recovery facilities	Export	0.600	0.950	1																								
+2019	Moorabool	Materials recovery facilities	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.000	0.750	1																								
+2019	Moorabool	Hazardous waste treatment facilities	Landfill	0.000	0.500	6																								
+2019	Moorabool	Hazardous waste treatment facilities	Fuel preparation	0.000	1.000	0																								
+2019	Moorabool	Organics processing operations	Landfill	0.000	0.700	7																								
+2019	Moorabool	Organics processing operations	Fuel preparation	0.250	1.000	0																								
+2019	Moorabool	Organics processing operations	Land rehabilitation, agriculture, soil improvement and urban development	0.250	0.750	3																								
+2019	Moorabool	Incinerators	Landfill	0.000	0.800	8																								
+2019	Moorabool	Construction and demolition recycling operations	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.250	0.750	5																								
+2019	Moorabool	Construction and demolition recycling operations	Road base	0.250	0.750	2																								
+2019	Moorabool	Fuel preparation	Cement kilns and other energy recovery	0.100	0.900	0																								
+2019	Moorabool	Fuel preparation	Export	0.100	0.750	2																								
+2019	Moorabool	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	Export	0.000	0.900	3																								
+2019	Moorabool	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	Onshore remanufacturing of paper, metal, glass, plastic, rubber, oil etc.	0.000	1.000	0																								
+2019	Moorabool	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	Road base	0.000	0.750	1																								
+2019	Northern Grampians	Municipal solid waste	Landfill	0.013	0.150	1																								
+2019	Northern Grampians	Municipal solid waste	Litter and illegal dumping	0.100	0.250	0																								
+2019	Northern Grampians	Municipal solid waste	Alternative waste technologies	0.400	0.750	0																								
+2019	Northern Grampians	Municipal solid waste	Materials recovery facilities	0.500	0.900	0																								
+2019	Northern Grampians	Municipal solid waste	Container deposit systems and other drop off	0.475	1.000	0																								
+2019	Northern Grampians	Municipal solid waste	Hazardous waste treatment facilities	0.200	0.650	0																								
+2019	Northern Grampians	Municipal solid waste	Organics processing operations	0.175	0.700	2																								
+2019	Northern Grampians	Commercial and industrial waste	Landfill	0.013	0.160	2																								
+2019	Northern Grampians	Commercial and industrial waste	Alternative waste technologies	0.300	1.000	0																								
+2019	Northern Grampians	Commercial and industrial waste	Materials recovery facilities	0.225	0.500	0																								
+2019	Northern Grampians	Commercial and industrial waste	Container deposit systems and other drop off	0.400	0.950	0																								
+2019	Northern Grampians	Commercial and industrial waste	Hazardous waste treatment facilities	0.550	0.950	0																								
+2019	Northern Grampians	Commercial and industrial waste	Incinerators	0.500	0.900	0																								
+2019	Northern Grampians	Commercial and industrial waste	Land rehabilitation, agriculture, soil improvement and urban development	0.250	0.450	2																								
+2019	Northern Grampians	Commercial and industrial waste	Organics processing operations	0.250	0.650	3																								
+2019	Northern Grampians	Commercial and industrial waste	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.075	0.350	4																								
+2019	Northern Grampians	Construction and demolition waste	Landfill	0.013	0.170	3																								
+2019	Northern Grampians	Construction and demolition waste	Litter and illegal dumping	0.025	0.250	0																								
+2019	Northern Grampians	Construction and demolition waste	Organics processing operations	0.250	0.750	4																								
+2019	Northern Grampians	Construction and demolition waste	Construction and demolition recycling operations	0.250	0.750	0																								
+2019	Northern Grampians	Alternative waste technologies	Landfill	0.000	0.250	4																								
+2019	Northern Grampians	Alternative waste technologies	Fuel preparation	0.550	1.000	0																								
+2019	Northern Grampians	Alternative waste technologies	Alternative waste technologies	0.200	0.750	1																								
+2019	Northern Grampians	Alternative waste technologies	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.000	0.800	2																								
+2019	Northern Grampians	Container deposit systems and other drop off	Fuel preparation	0.250	1.000	0																								
+2019	Northern Grampians	Container deposit systems and other drop off	Organics processing operations	0.100	0.900	1																								
+2019	Northern Grampians	Container deposit systems and other drop off	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.013	0.450	3																								
+2019	Northern Grampians	Materials recovery facilities	Landfill	0.000	0.350	5																								
+2019	Northern Grampians	Materials recovery facilities	Export	0.600	0.950	1																								
+2019	Northern Grampians	Materials recovery facilities	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.000	0.750	1																								
+2019	Northern Grampians	Hazardous waste treatment facilities	Landfill	0.000	0.500	6																								
+2019	Northern Grampians	Hazardous waste treatment facilities	Fuel preparation	0.000	1.000	0																								
+2019	Northern Grampians	Organics processing operations	Landfill	0.000	0.700	7																								
+2019	Northern Grampians	Organics processing operations	Fuel preparation	0.250	1.000	0																								
+2019	Northern Grampians	Organics processing operations	Land rehabilitation, agriculture, soil improvement and urban development	0.250	0.750	3																								
+2019	Northern Grampians	Incinerators	Landfill	0.000	0.800	8																								
+2019	Northern Grampians	Construction and demolition recycling operations	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.250	0.750	5																								
+2019	Northern Grampians	Construction and demolition recycling operations	Road base	0.250	0.750	2																								
+2019	Northern Grampians	Fuel preparation	Cement kilns and other energy recovery	0.100	0.900	0																								
+2019	Northern Grampians	Fuel preparation	Export	0.100	0.750	2																								
+2019	Northern Grampians	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	Export	0.000	0.900	3																								
+2019	Northern Grampians	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	Onshore remanufacturing of paper, metal, glass, plastic, rubber, oil etc.	0.000	1.000	0																								
+2019	Northern Grampians	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	Road base	0.000	0.750	1																								
+2019	Pyrenees	Municipal solid waste	Landfill	0.013	0.150	1																								
+2019	Pyrenees	Municipal solid waste	Litter and illegal dumping	0.100	0.250	0																								
+2019	Pyrenees	Municipal solid waste	Alternative waste technologies	0.400	0.750	0																								
+2019	Pyrenees	Municipal solid waste	Materials recovery facilities	0.500	0.900	0																								
+2019	Pyrenees	Municipal solid waste	Container deposit systems and other drop off	0.475	1.000	0																								
+2019	Pyrenees	Municipal solid waste	Hazardous waste treatment facilities	0.200	0.650	0																								
+2019	Pyrenees	Municipal solid waste	Organics processing operations	0.175	0.700	2																								
+2019	Pyrenees	Commercial and industrial waste	Landfill	0.013	0.160	2																								
+2019	Pyrenees	Commercial and industrial waste	Alternative waste technologies	0.300	1.000	0																								
+2019	Pyrenees	Commercial and industrial waste	Materials recovery facilities	0.225	0.500	0																								
+2019	Pyrenees	Commercial and industrial waste	Container deposit systems and other drop off	0.400	0.950	0																								
+2019	Pyrenees	Commercial and industrial waste	Hazardous waste treatment facilities	0.550	0.950	0																								
+2019	Pyrenees	Commercial and industrial waste	Incinerators	0.500	0.900	0																								
+2019	Pyrenees	Commercial and industrial waste	Land rehabilitation, agriculture, soil improvement and urban development	0.250	0.450	2																								
+2019	Pyrenees	Commercial and industrial waste	Organics processing operations	0.250	0.650	3																								
+2019	Pyrenees	Commercial and industrial waste	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.075	0.350	4																								
+2019	Pyrenees	Construction and demolition waste	Landfill	0.013	0.170	3																								
+2019	Pyrenees	Construction and demolition waste	Litter and illegal dumping	0.025	0.250	0																								
+2019	Pyrenees	Construction and demolition waste	Organics processing operations	0.250	0.750	4																								
+2019	Pyrenees	Construction and demolition waste	Construction and demolition recycling operations	0.250	0.750	0																								
+2019	Pyrenees	Alternative waste technologies	Landfill	0.000	0.250	4																								
+2019	Pyrenees	Alternative waste technologies	Fuel preparation	0.550	1.000	0																								
+2019	Pyrenees	Alternative waste technologies	Alternative waste technologies	0.200	0.750	1																								
+2019	Pyrenees	Alternative waste technologies	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.000	0.800	2																								
+2019	Pyrenees	Container deposit systems and other drop off	Fuel preparation	0.250	1.000	0																								
+2019	Pyrenees	Container deposit systems and other drop off	Organics processing operations	0.100	0.900	1																								
+2019	Pyrenees	Container deposit systems and other drop off	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.013	0.450	3																								
+2019	Pyrenees	Materials recovery facilities	Landfill	0.000	0.350	5																								
+2019	Pyrenees	Materials recovery facilities	Export	0.600	0.950	1																								
+2019	Pyrenees	Materials recovery facilities	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.000	0.750	1																								
+2019	Pyrenees	Hazardous waste treatment facilities	Landfill	0.000	0.500	6																								
+2019	Pyrenees	Hazardous waste treatment facilities	Fuel preparation	0.000	1.000	0																								
+2019	Pyrenees	Organics processing operations	Landfill	0.000	0.700	7																								
+2019	Pyrenees	Organics processing operations	Fuel preparation	0.250	1.000	0																								
+2019	Pyrenees	Organics processing operations	Land rehabilitation, agriculture, soil improvement and urban development	0.250	0.750	3																								
+2019	Pyrenees	Incinerators	Landfill	0.000	0.800	8																								
+2019	Pyrenees	Construction and demolition recycling operations	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.250	0.750	5																								
+2019	Pyrenees	Construction and demolition recycling operations	Road base	0.250	0.750	2																								
+2019	Pyrenees	Fuel preparation	Cement kilns and other energy recovery	0.100	0.900	0																								
+2019	Pyrenees	Fuel preparation	Export	0.100	0.750	2																								
+2019	Pyrenees	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	Export	0.000	0.900	3																								
+2019	Pyrenees	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	Onshore remanufacturing of paper, metal, glass, plastic, rubber, oil etc.	0.000	1.000	0																								
+2019	Pyrenees	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	Road base	0.000	0.750	1																								
+2019	West Wimmera	Municipal solid waste	Landfill	0.013	0.150	1																								
+2019	West Wimmera	Municipal solid waste	Litter and illegal dumping	0.100	0.250	0																								
+2019	West Wimmera	Municipal solid waste	Alternative waste technologies	0.400	0.750	0																								
+2019	West Wimmera	Municipal solid waste	Materials recovery facilities	0.500	0.900	0																								
+2019	West Wimmera	Municipal solid waste	Container deposit systems and other drop off	0.475	1.000	0																								
+2019	West Wimmera	Municipal solid waste	Hazardous waste treatment facilities	0.200	0.650	0																								
+2019	West Wimmera	Municipal solid waste	Organics processing operations	0.175	0.700	2																								
+2019	West Wimmera	Commercial and industrial waste	Landfill	0.013	0.160	2																								
+2019	West Wimmera	Commercial and industrial waste	Alternative waste technologies	0.300	1.000	0																								
+2019	West Wimmera	Commercial and industrial waste	Materials recovery facilities	0.225	0.500	0																								
+2019	West Wimmera	Commercial and industrial waste	Container deposit systems and other drop off	0.400	0.950	0																								
+2019	West Wimmera	Commercial and industrial waste	Hazardous waste treatment facilities	0.550	0.950	0																								
+2019	West Wimmera	Commercial and industrial waste	Incinerators	0.500	0.900	0																								
+2019	West Wimmera	Commercial and industrial waste	Land rehabilitation, agriculture, soil improvement and urban development	0.250	0.450	2																								
+2019	West Wimmera	Commercial and industrial waste	Organics processing operations	0.250	0.650	3																								
+2019	West Wimmera	Commercial and industrial waste	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.075	0.350	4																								
+2019	West Wimmera	Construction and demolition waste	Landfill	0.013	0.170	3																								
+2019	West Wimmera	Construction and demolition waste	Litter and illegal dumping	0.025	0.250	0																								
+2019	West Wimmera	Construction and demolition waste	Organics processing operations	0.250	0.750	4																								
+2019	West Wimmera	Construction and demolition waste	Construction and demolition recycling operations	0.250	0.750	0																								
+2019	West Wimmera	Alternative waste technologies	Landfill	0.000	0.250	4																								
+2019	West Wimmera	Alternative waste technologies	Fuel preparation	0.550	1.000	0																								
+2019	West Wimmera	Alternative waste technologies	Alternative waste technologies	0.200	0.750	1																								
+2019	West Wimmera	Alternative waste technologies	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.000	0.800	2																								
+2019	West Wimmera	Container deposit systems and other drop off	Fuel preparation	0.250	1.000	0																								
+2019	West Wimmera	Container deposit systems and other drop off	Organics processing operations	0.100	0.900	1																								
+2019	West Wimmera	Container deposit systems and other drop off	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.013	0.450	3																								
+2019	West Wimmera	Materials recovery facilities	Landfill	0.000	0.350	5																								
+2019	West Wimmera	Materials recovery facilities	Export	0.600	0.950	1																								
+2019	West Wimmera	Materials recovery facilities	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.000	0.750	1																								
+2019	West Wimmera	Hazardous waste treatment facilities	Landfill	0.000	0.500	6																								
+2019	West Wimmera	Hazardous waste treatment facilities	Fuel preparation	0.000	1.000	0																								
+2019	West Wimmera	Organics processing operations	Landfill	0.000	0.700	7																								
+2019	West Wimmera	Organics processing operations	Fuel preparation	0.250	1.000	0																								
+2019	West Wimmera	Organics processing operations	Land rehabilitation, agriculture, soil improvement and urban development	0.250	0.750	3																								
+2019	West Wimmera	Incinerators	Landfill	0.000	0.800	8																								
+2019	West Wimmera	Construction and demolition recycling operations	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.250	0.750	5																								
+2019	West Wimmera	Construction and demolition recycling operations	Road base	0.250	0.750	2																								
+2019	West Wimmera	Fuel preparation	Cement kilns and other energy recovery	0.100	0.900	0																								
+2019	West Wimmera	Fuel preparation	Export	0.100	0.750	2																								
+2019	West Wimmera	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	Export	0.000	0.900	3																								
+2019	West Wimmera	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	Onshore remanufacturing of paper, metal, glass, plastic, rubber, oil etc.	0.000	1.000	0																								
+2019	West Wimmera	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	Road base	0.000	0.750	1																								
+2019	Yarriambiack	Municipal solid waste	Landfill	0.013	0.150	1																								
+2019	Yarriambiack	Municipal solid waste	Litter and illegal dumping	0.100	0.250	0																								
+2019	Yarriambiack	Municipal solid waste	Alternative waste technologies	0.400	0.750	0																								
+2019	Yarriambiack	Municipal solid waste	Materials recovery facilities	0.500	0.900	0																								
+2019	Yarriambiack	Municipal solid waste	Container deposit systems and other drop off	0.475	1.000	0																								
+2019	Yarriambiack	Municipal solid waste	Hazardous waste treatment facilities	0.200	0.650	0																								
+2019	Yarriambiack	Municipal solid waste	Organics processing operations	0.175	0.700	2																								
+2019	Yarriambiack	Commercial and industrial waste	Landfill	0.013	0.160	2																								
+2019	Yarriambiack	Commercial and industrial waste	Alternative waste technologies	0.300	1.000	0																								
+2019	Yarriambiack	Commercial and industrial waste	Materials recovery facilities	0.225	0.500	0																								
+2019	Yarriambiack	Commercial and industrial waste	Container deposit systems and other drop off	0.400	0.950	0																								
+2019	Yarriambiack	Commercial and industrial waste	Hazardous waste treatment facilities	0.550	0.950	0																								
+2019	Yarriambiack	Commercial and industrial waste	Incinerators	0.500	0.900	0																								
+2019	Yarriambiack	Commercial and industrial waste	Land rehabilitation, agriculture, soil improvement and urban development	0.250	0.450	2																								
+2019	Yarriambiack	Commercial and industrial waste	Organics processing operations	0.250	0.650	3																								
+2019	Yarriambiack	Commercial and industrial waste	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.075	0.350	4																								
+2019	Yarriambiack	Construction and demolition waste	Landfill	0.013	0.170	3																								
+2019	Yarriambiack	Construction and demolition waste	Litter and illegal dumping	0.025	0.250	0																								
+2019	Yarriambiack	Construction and demolition waste	Organics processing operations	0.250	0.750	4																								
+2019	Yarriambiack	Construction and demolition waste	Construction and demolition recycling operations	0.250	0.750	0																								
+2019	Yarriambiack	Alternative waste technologies	Landfill	0.000	0.250	4																								
+2019	Yarriambiack	Alternative waste technologies	Fuel preparation	0.550	1.000	0																								
+2019	Yarriambiack	Alternative waste technologies	Alternative waste technologies	0.200	0.750	1																								
+2019	Yarriambiack	Alternative waste technologies	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.000	0.800	2																								
+2019	Yarriambiack	Container deposit systems and other drop off	Fuel preparation	0.250	1.000	0																								
+2019	Yarriambiack	Container deposit systems and other drop off	Organics processing operations	0.100	0.900	1																								
+2019	Yarriambiack	Container deposit systems and other drop off	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.013	0.450	3																								
+2019	Yarriambiack	Materials recovery facilities	Landfill	0.000	0.350	5																								
+2019	Yarriambiack	Materials recovery facilities	Export	0.600	0.950	1																								
+2019	Yarriambiack	Materials recovery facilities	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.000	0.750	1																								
+2019	Yarriambiack	Hazardous waste treatment facilities	Landfill	0.000	0.500	6																								
+2019	Yarriambiack	Hazardous waste treatment facilities	Fuel preparation	0.000	1.000	0																								
+2019	Yarriambiack	Organics processing operations	Landfill	0.000	0.700	7																								
+2019	Yarriambiack	Organics processing operations	Fuel preparation	0.250	1.000	0																								
+2019	Yarriambiack	Organics processing operations	Land rehabilitation, agriculture, soil improvement and urban development	0.250	0.750	3																								
+2019	Yarriambiack	Incinerators	Landfill	0.000	0.800	8																								
+2019	Yarriambiack	Construction and demolition recycling operations	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	0.250	0.750	5																								
+2019	Yarriambiack	Construction and demolition recycling operations	Road base	0.250	0.750	2																								
+2019	Yarriambiack	Fuel preparation	Cement kilns and other energy recovery	0.100	0.900	0																								
+2019	Yarriambiack	Fuel preparation	Export	0.100	0.750	2																								
+2019	Yarriambiack	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	Export	0.000	0.900	3																								
+2019	Yarriambiack	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	Onshore remanufacturing of paper, metal, glass, plastic, rubber, oil etc.	0.000	1.000	0																								
+2019	Yarriambiack	Onshore processing of paper, metal, glass, plastic, rubber, oil etc.	Road base	0.000	0.750	1																								
