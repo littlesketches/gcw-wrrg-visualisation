@@ -37,9 +37,9 @@
             },
             landscape: {
                 width:              1800,
-                height:             950,
+                height:             1000,
                 margin: {
-                    top:            5,
+                    top:            20,
                     bottom:         150,
                     left:           10,
                     right:          150
@@ -424,8 +424,8 @@
                     wrap:    settings.dims.margin.left
                 },
                 landscape: {
-                    x:       vis.scale.nodePosY(0.05), 
-                    y:       settings.dims.height - settings.dims.margin.bottom * 0.5,
+                    x:       vis.scale.nodePosY(0), 
+                    y:       settings.dims.height - settings.dims.margin.bottom * 0.25,
                     wrap:    settings.dims.width * 0.2
                 }
             },
@@ -438,7 +438,7 @@
                 },
                 landscape: {
                     x:       vis.scale.nodePosY(0.35), 
-                    y:       settings.dims.height - settings.dims.margin.bottom * 0.5,
+                    y:       settings.dims.height - settings.dims.margin.bottom * 0.25,
                     wrap:     settings.dims.width * 0.4
                 }
             },
@@ -451,7 +451,7 @@
                 },
                 landscape: {
                     x:       vis.scale.nodePosY(0.85), 
-                    y:       settings.dims.height - settings.dims.margin.bottom* 0.5,
+                    y:       settings.dims.height - settings.dims.margin.bottom* 0.25,
                     wrap:     settings.dims.width * 0.20
                 }
             },
