@@ -27,7 +27,7 @@
 
 }
 
-body{
+body, select{
     font-family: 'Roboto';
     margin: 0px;
 }
@@ -43,22 +43,66 @@ aside{
     z-index: 1;
 }
 .title-block{
-    border-bottom: 3px solid #000;
+    border-bottom: 1.5px solid var(--grey);
+    display: grid;
+    grid-template-columns: auto auto;
 }
+    .title-container{
+        grid-area: 1 / 1 / 2 / 2;
+        width: auto;
+    }
+    .logo-container{
+        grid-area: 1 / 2 / 2 / 3;
+        width: auto;
+        align-items: center;
+        display: grid;
+        justify-items: end;
+        margin-right: 1vw;
+
+    }
+    .logo-container img{
+        width: 40%;
+    }
+    .title-container{
+        display: inline-block
+    }
+    .main-title,
+    select#region-selector {
+        color: var(--green);
+        /* text-transform: uppercase; */
+        font-size: 2.25vw;
+        font-weight: 400;
+    }
     .main-title{
-        font-size: 3.25vw;
-        margin-block-start: 0.25rem;
-        margin-block-end: 0.25rem;
-        letter-spacing: 0.2vw;;
+        margin-block-start: 1.75rem;
+        margin-block-end: 0.75rem;
     }
-    .main-subtitle{
-        font-size: 1.75vw;
+    select.data-selector{
+        margin-left: 0.5rem;
+    }
+    .main-subtitle, 
+    .year-selector-container,
+    .dropdown-container select{  
+        font-size: 1vw;
         margin-block-start: 0em;
-        margin-block-end: 0.25em;
+        font-weight: 300;
     }
 
+    /* Selectors */
+    .dropdown-container{
+        display: inline-flex;
+    }
+    .date-selector-container{
+        display: inline-flex;
+        padding: 0.5rem 0rem 1.5rem 0rem;
+    }
+    .dropdown-container select{
+        border: none;
+        border-bottom: dotted 0.25px var(--grey);
+        margin-right: 0.75rem;
+    }
 
-
+/* SVG ELEMENTS */
 .node-link-cover{
     fill: #fff;
 }
@@ -69,13 +113,17 @@ aside{
 .node-label{
     pointer-events: none;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 16px;
     text-anchor: middle;
     text-shadow:
          #fff 1.5px 1.5px 3px, 
          #fff -1.5px -1.5px 3px, 
          #fff 5px 5px 10px,
          #fff -5px -5px 10px;
+}
+.node-label.data{
+    font-weight: 400;
+    font-size: 11px;
 }
 
 .link{
@@ -90,11 +138,21 @@ aside{
 .label-section{
     font-size: 30px;
     font-weight: 600;
+    fill: var(--grey);
 }
+.label-section.data{
+    font-size: 20px;
+    font-weight: 400;
+}
+
 .label-end-destination{
     font-size: 24px;
     font-weight: 600;
     text-anchor: middle
+}
+.label-end-destination.data{
+    font-size: 16px;
+    font-weight: 400;
 }
 
 .link.waste-disposal{
@@ -125,9 +183,39 @@ aside{
 
 
 /** MOUSEOVER TOOLTIP ***/
-
-
-
+.tooltip{
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 17.5vw;
+    /* height: 5vw; */
+    background-color: rgba(0, 0, 0, 0.85);
+    border:var(--lime) 2px solid;
+    color: #fff;
+    border-radius: 1.25vw;
+    display: grid;
+    padding: 1vw;
+    pointer-events: none;
+}
+.tooltip-header{
+    font-size: 0.8vw;
+    height: fit-content;
+}
+.tooltip-content{
+    font-size: 0.8vw;
+    height: fit-content;
+}
+.tooltip-volume{
+    color: var(--lime);
+    font-size: 1.25vw;
+    padding: 0.25rem 0;
+}
+.tooltip-more{
+    text-align: center;
+    font-style: italic;
+    color: var(--lime);
+}
 /** MODAL WINDOW ***/
 .modal-container{
     position: fixed;
@@ -163,11 +251,12 @@ aside{
 }
 h2.modal-title{
     color: #fff;
-    font-size: 4vw;
+    font-size: 2rem;
     font-weight: 600;
     border-bottom: #fff solid 2px;
     line-height: 1.25;
     padding-right: 2rem;
+    margin-block-start: 0rem;
 }
 .modal-content{
     font-size: 1rem;
@@ -177,7 +266,7 @@ h2.modal-title{
 .modal-close-button{
     z-index: 10;
     position: absolute;
-    top: 5vh;
+    top: 2vh;
     right: 5vw;
     color: #fff;
     font-size: 3vw;
@@ -188,7 +277,6 @@ h2.modal-title{
          #000 5px 5px 10px,
          #000 -5px -5px 10px;
 }    
-
 
 .powerBI-embed-container iframe{
     width: 90vw;

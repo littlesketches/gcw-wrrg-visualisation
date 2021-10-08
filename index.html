@@ -19,9 +19,29 @@
 
 <body>
     <main>
-        <div class = "title-block">
-            <h1 class = "main-title">Waste data flows</h1>
-            <h2 class = "main-subtitle">An interactive visualisation of waste flows in 2019</h2>
+        <div class = "title-block" style="opacity:0">
+            <div class = "title-container">
+                <h1 class = "main-title">
+                    <div class = 'dropdown-container'>
+                        <label for="regionSelector"> Waste data flows for </label>
+                        <select name="regionSelector" id="region-selector" class = "region-selector data-selector"></select>
+                    </div>
+                </h1>
+                <h2 class = "main-subtitle">
+                    <div class = 'dropdown-container'>
+                        <label for="yearSelector">An interactive visualisation of waste flows in </label>
+                        <select name="yearSelector" id="year-selector" class = "year-selector data-selector"></select>
+                    </div>
+                    <div class = 'dropdown-container'>
+                        <label for="materialSelector">for </label>
+                        <select name="materialSelector" id="material-selector" class = "material-selector data-selector"></select>
+                    </div>
+                </h2>
+            </div>
+            <div class = "logo-container">
+                <img src = "img/gcw-vic-col.png">
+            </div>
+
         </div>
         <div id = "vis-container" class = "rotated">
             <svg id ="flow-vis"></svg>
@@ -40,7 +60,11 @@
         </div>
 
         <div class ="tooltip">
-
+            <div class ="tooltip-header">Estimated volume in 2019</div>
+            <div class ="tooltip-content">
+                <div class= 'tooltip-volume'>120,000 tonnes</div>
+                <div class= 'tooltip-detail'>from xxx xxxxx to yyyy yyyyy</div>
+            </div>
         </div>
 
     </aside>

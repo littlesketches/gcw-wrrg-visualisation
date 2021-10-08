@@ -5,18 +5,19 @@
 /// VISUALISATION FOR GRAMPIANS CENTRAL WEST WRGG   ///
 ///                                                 ///
 /// ----------------------------------------------  ///
-/// VERSION 0.1                                     ///
+/// VERSION 0.8                                     ///
 /// Made by Little Sketches in October 2021         ///
 ///                                                 ///
 ///////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////
 
+    ///////////////////////////////////////////////
+    // 1. INSTANTIATE SETTINGS AND DATA OBJECTS ///
+    ///////////////////////////////////////////////
 
-    // 1. Instantiate settings and data objects
     const settings = { 
         svgID:                  'flow-vis',
         dataSource:             'gsheet',      // 'local' or 'gsheet'
-        year:                   2019,
         info: {
             wrrgFullName:       'Grampians Central West Waste and Resource Recovery Group'
         },
@@ -68,9 +69,9 @@
 
     const vis = {
         el:     {},
-        state:  {
-            region:         'All LGAs',
-            material:       'All materials',
+        state:  {           // Initialisation state
+            region:         'all LGAs in GCW',
+            material:       'all materials',
             year:           2019
         },
         scale:  {},
@@ -113,13 +114,43 @@
             }   
         },
         methods: {
-            ui:     {}
+            ui:     {
+                updateVis(){
+                    // 1. Update the vis state
+                    vis.state.region = document.querySelector('#region-selector').value
+                    vis.state.year = document.querySelector('#year-selector').value
+                    vis.state.material = document.querySelector('#material-selector').value
+
+                    // 2. Animate out and remove current vis and re-render
+                    const svg = d3.select(`#${settings.svgID}`)
+                    svg.transition().duration(250)
+                        .style('opacity', 0)
+                    setTimeout(() => {
+                        svg.selectAll('*').remove()
+                        renderVis()
+                        svg.transition().duration(750)
+                            .style('opacity', null)
+                    }, 250);
+                },
+                closeModal(){
+                    document.querySelector('.modal-container').classList.add('closed')
+                    document.querySelector('main').classList.remove('blur')
+                }, 
+                openModal(){
+                    document.querySelector('.modal-container').classList.remove('closed')
+                    document.querySelector('main').classList.add('blur')
+                } 
+            }
         }
     }
 
 
-    // 2. Call visualisation build sequence 
+    /////////////////////////////////
+    // 2. CALL  VIS BUILD SEQUENCE //
+    /////////////////////////////////
+
     buildVis(settings)
+
     // Load data from TSV files from GSheet
     function buildVis(settings) {
         console.log(`Building from ${settings.dataSource} data`)
@@ -164,13 +195,13 @@
 
 
     ////////////////////////////////////
-    // 1. PARSE AND WRANGLE DATA     ///
+    // 3. PARSE AND WRANGLE DATA     ///
     ////////////////////////////////////
 
     async function applyQuerySettings(){
         // i. Check for query parameters and update material. A date set by the query selector is set while parsing input data 
         settings.queryParameters = new URLSearchParams(window.location.search)
-        if (settings.queryParameters.has('year'))   settings.year = settings.queryParameters.get('year')    
+        if (settings.queryParameters.has('year'))   vis.state.year = settings.queryParameters.get('year')    
         if (settings.queryParameters.has('orientation'))   settings.layout.orientation = settings.queryParameters.get('orientation')    
     };
 
@@ -181,10 +212,11 @@
         data.schema.list.nodeName = data.inputTable.schema_nodes.map(d => d.nodeName)
         data.schema.list.nodeLR = data.inputTable.schema_nodes.map(d => d.nodeName).sort((b,a) => b.xPos - a.xPos)
         data.schema.list.submaterial = Object.keys(data.inputTable.data_flows[0]).filter(d => excludedFields.indexOf(d)  === -1)
+        data.schema.list.year = [... new Set(data.inputTable.data_flows.map(d => d.year) )]
 
         // 2. Create node and link data objects
-        const flowYearData = data.inputTable.data_flows.filter(d => d.year === settings.year)
-        data.schema.list.lga.unshift('All LGAs')        // Add All LGAs
+        const flowYearData = data.inputTable.data_flows.filter(d => d.year === vis.state.year)
+        data.schema.list.lga.unshift('all LGAs in GCW')        // Add all LGAs in GCW
 
         for( region of data.schema.list.lga){
             data.chart.node[region] = {}
@@ -253,20 +285,31 @@
 
 
     ////////////////////////////////////////
-    // 2. RENDER THE FLOW VISUALISATION  ///
+    // 4. RENDER THE FLOW VISUALISATION  ///
     ////////////////////////////////////////
 
     async function renderVis(){
-        // 0. SETUP GEOMETRY FROM DATA
+
+        //////////////////////////////////
+        // I. SETUP GEOMETRY FROM DATA //
+        //////////////////////////////////
+
+        // a. Set dims for SVG based on orientation settings
         settings.dims = settings.dimsByOrientation[settings.layout.orientation]
-
-        const nodeData = data.chart.node[vis.state.region][vis.state.material],
-            linkData = data.chart.link[vis.state.region][vis.state.material]
-
         const visWidth = settings.dims.width - settings.dims.margin.left - settings.dims.margin.right,
             visHeight = settings.dims.height - settings.dims.margin.top - settings.dims.margin.bottom
 
-        // 1. SPECIFY LAYOUT GROUPS: Layers appended in rendering order
+        // b. Get node and link data for current vis state (i.e. region and material)
+        const nodeData = data.chart.node[vis.state.region][vis.state.material],
+            linkData = data.chart.link[vis.state.region][vis.state.material],
+            totalVolume = d3.sum(nodeData.filter(d => d.type === 'source stream').map(d => d.value))
+
+
+        ///////////////////////////////
+        // II. SPECIFY LAYOUT GROUPS // 
+        ///////////////////////////////
+
+        // Layers appended in rendering order
         const svg = d3.select(`#${settings.svgID}`).attr('viewBox', `0 0 ${settings.dims.width} ${settings.dims.height}`),
             svgTitle = svg.append('title').attr('id', 'svg-title'),
             svgDescription = svg.append('title').attr('id', 'svg-description'),
@@ -275,19 +318,28 @@
             nodeGroup = visGroup.append('g').classed('node-group', true),
             annotationGroup = svg.append('g').classed('annotation-group', true)
 
-        // 2. A11Y: Setup title and desc for screen reader accessibility
-        const svgTitleText = `A graphic showing the volumes of waste flows in ${settings.year})`,
-            svgDescText = `A graphic showing the volumes of waste flows in ${settings.year})`
+
+        ////////////////////////
+        // III. ACCESSIBILITY // 
+        ////////////////////////
+
+        // a. Setup SVG title and desc for screen reader accessibility
+        const svgTitleText = `A graphic showing the volumes of waste flows in ${vis.state.year})`,
+            svgDescText = `A graphic showing the volumes of waste flows in ${vis.state.year})`
 
         d3.select('#svg-title').html(svgTitleText)
         d3.select('#svg-description').html(svgDescText)
 
-        // Toggle title so that it doesn't appear as a default tooltip
+        // b. Toggle title so that it doesn't appear as a default tooltip
         svg.on('mouseover', () => document.getElementById('svg-title').innerHTML = null )
             .on('mouseout', () =>  document.getElementById('svg-title').innerHTML = svgTitleText )
 
 
-        // 3. SETUP SCALES
+        ///////////////////////
+        // IV. SETUP SCALES  // 
+        ///////////////////////    
+
+        // Note: x and y scales set according to diagram orientation
         switch(settings.layout.orientation){
             case 'portrait':
                 vis.scale.nodePosX  = d3.scaleLinear().domain([0, 1]).range([settings.dims.margin.left, settings.dims.width - settings.dims.margin.right])
@@ -302,13 +354,18 @@
         vis.scale.linkWidth = d3.scaleLinear().domain(d3.extent(linkData.map(d => d.value))).range([settings.geometry.linkWidth.min, settings.geometry.linkWidth.max])
 
 
-        // 4. RENDER NODES: Background circle shape and text
+        //////////////////////
+        // V. RENDER NODES  //
+        //////////////////////
+       
+        // Each node has: i) a background circle to cover links underneath, ii) A main 'node' circle and iii) a text label 
         for (nodeObj of nodeData) {
-            const group = nodeGroup.append('g').classed(`node-group ${helpers.slugify(nodeObj.type)} ${helpers.slugify(nodeObj.nodeName)}`, true)
-                .attr('transform', 
-                    settings.layout.orientation === 'portrait' ?  `translate(${vis.scale.nodePosX(nodeObj.xPos)} , ${vis.scale.nodePosY(nodeObj.yPos)})`
-                        : `translate(${vis.scale.nodePosY(nodeObj.yPos)} , ${vis.scale.nodePosX(nodeObj.xPos)})`
-                    )
+            const group = nodeGroup.append('g')
+                .datum(nodeObj)
+                .attr('class' , d => `node-group ${helpers.slugify(d.type)} ${helpers.slugify(d.nodeName)}`)
+                .attr('transform',  d => settings.layout.orientation === 'portrait' 
+                    ?  `translate(${vis.scale.nodePosX(d.xPos)} , ${vis.scale.nodePosY(d.yPos)})`
+                        : `translate(${vis.scale.nodePosY(d.yPos)} , ${vis.scale.nodePosX(d.xPos)})`   )
 
             group.append('circle').datum(nodeObj)
                 .attr('class', d => `node-link-cover ${helpers.slugify(d.type)} ${helpers.slugify(d.nodeName)}`)
@@ -318,17 +375,28 @@
                 .attr('class', d => `node ${helpers.slugify(d.type)} ${helpers.slugify(d.nodeName)}`)
                 .attr('r',  d => vis.scale.nodeSize(d.value))
                 .style('fill', d => d.colourCSS)
-                .on('click', nodeClick)
-                .on('mouseover', nodeMouseover)
-                .on('mouseout', mouseout)
+                    .on('click', nodeClick)
+                    .on('mouseover', nodeMouseover)
+                    .on('mouseout', mouseout)
 
-            group.append('text').classed(`node-label ${helpers.slugify(nodeObj.type)} ${helpers.slugify(nodeObj.nodeName)}`, true)
+            const label = group.append('text').classed(`node-label ${helpers.slugify(nodeObj.type)} ${helpers.slugify(nodeObj.nodeName)}`, true)
                 .attr('x', 0).attr('y', 0).attr('dy', 0)
                 .text(nodeObj.nodeNameShort !== '' ? nodeObj.nodeNameShort : nodeObj.nodeName)
-                .call(helpers.wrap, d3.max([vis.scale.nodeSize(nodeObj.value) * 2.75, 100]), 1.1 )
+                .call(helpers.wrap, d3.max([vis.scale.nodeSize(nodeObj.value) * 2.75, 140]), 1.1 )
+
+            const labelBBox =  label.node().getBBox(),
+                dataLabelYoffset = labelBBox.height < 20 ? 8 : labelBBox.height < 40 ? 4 :  0
+
+            group.append('text').classed(`node-label data ${helpers.slugify(nodeObj.type)} ${helpers.slugify(nodeObj.nodeName)}`, true)
+                .attr('x', 0).attr('y',  labelBBox.y +  labelBBox.height + dataLabelYoffset).attr('dy', 0)
+                .text(`${helpers.numberFormatters.formatComma(nodeObj.value)} tonnes`)
         }
 
-        // 5. RENDER LINKS
+
+        ///////////////////////
+        // VI. RENDER LINKS  //
+        ///////////////////////
+
         // a. Create link position start and end horizontal offsets (to prevent link overlap and position with spacing)
         for (nodeObj of nodeData){
             // Node output links
@@ -410,11 +478,11 @@
                 .on('mouseout', mouseout)
         }
 
-        ////////////////////////
-        // ADD ANNOTATION  ////
-        ///////////////////////
+        /////////////////////////
+        // VII. ADD ANNOTATION //
+        /////////////////////////
 
-        // Annotation settings
+        // a. Annotation settings
         settings.annotation = {
             collection: {
                 label:      'Waste source streams',
@@ -463,7 +531,7 @@
                     wrap:    settings.dims.width * 0.2
                 },
                 landscape: {
-                    x:       vis.scale.nodePosY(1), 
+                    x:       vis.scale.nodePosY(1.025), 
                     y:       vis.scale.nodePosX(0.1),
                     wrap:     settings.dims.margin.right
                 }
@@ -476,7 +544,7 @@
                     wrap:    settings.dims.width * 0.125
                 },
                 landscape: {
-                    x:       vis.scale.nodePosY(1), 
+                    x:       vis.scale.nodePosY(1.025), 
                     y:       vis.scale.nodePosX(0.295),
                     wrap:    settings.dims.margin.right
                 }
@@ -489,13 +557,14 @@
                     wrap:    settings.dims.width * 0.4
                 },
                 landscape: {
-                    x:       vis.scale.nodePosY(1), 
+                    x:       vis.scale.nodePosY(1.0251), 
                     y:       vis.scale.nodePosX(0.8),
                     wrap:    settings.dims.margin.right
                 }
             },
         }
-        // a. Section labels
+
+        // b. Add section labels
         const sectionLabels = ['collection', 'management', 'end']
         sectionLabels.forEach(labelName => {
             const group  = annotationGroup.append('g')
@@ -506,38 +575,64 @@
                 .call(helpers.wrap, settings.annotation[labelName][settings.layout.orientation].wrap, 1.1, false)
         })
 
-        // b. Outcome labels
-        const outcomeLabels = ['waste-disposal', 'waste-to-energy', 'recovered-product']
-        outcomeLabels.forEach(labelName => {
+        annotationGroup.append('g')
+           .attr('transform', `translate(${settings.annotation['collection'][settings.layout.orientation].x}, ${settings.annotation['collection'][settings.layout.orientation].y + 28})`)
+            .append('text').classed('label-section data', true)
+            .attr('x',0).attr('y',0).attr('dy',0)
+            .text(`${helpers.numberFormatters.formatComma(totalVolume)} tonnes collected`)
+
+
+        // c. Outcome labels
+        const outcomeLabels = ['waste-disposal', 'waste-to-energy', 'recovered-product'],
+            outcomeTypes = [
+                ['waste disposal'],
+                ['waste to energy'], 
+                ['recovered product', 'export']
+            ]
+       
+        outcomeLabels.forEach((labelName, i) => {
             const group  = annotationGroup.append('g')
                 .attr('transform', `translate(${settings.annotation[labelName][settings.layout.orientation].x}, ${settings.annotation[labelName][settings.layout.orientation].y})`)
-            group.append('text').classed(`label-end-destination ${labelName}`, true)
+            const label = group.append('text').classed(`label-end-destination ${labelName}`, true)
                 .attr('x',0).attr('y',0).attr('dy',0)
                 .text(settings.annotation[labelName].label)
                 .call(helpers.wrap, settings.annotation[labelName][settings.layout.orientation].wrap, 1.1, false)
+
+            const labelBBox = label.node().getBBox(), 
+                groupTotal = d3.sum(nodeData.filter(d => outcomeTypes[i].indexOf(d.type) > -1).map(d => d.value))
+            group.append('text').classed(`label-end-destination data ${labelName}`, true)
+                .attr('x',0).attr('y', -labelBBox.y + labelBBox.height - 25)
+                .text(`${helpers.numberFormatters.formatComma(groupTotal)} tonnes or`)
+            group.append('text').classed(`label-end-destination data ${labelName}`, true)
+                .attr('x',0).attr('y', -labelBBox.y + labelBBox.height - 6)
+                .text(`${helpers.numberFormatters.formatPct1dec(groupTotal/totalVolume)} of all waste`)
         })
 
 
+
+        //////////////////////////////////////////
+        // VIII.  NODE-LINK INTERACTION METHODS //
+        ///////////////////////////////////////////
+
         // Node and link interaction
         function nodeClick(ev, d){
-            console.log(ev, d, this)
-            // Populate modal informiton
+            // a. Populate modal informiton
             d3.select('.modal-title').html(d.nodeName)
             d3.select('.modal-content').html(d.modalContent)
 
-            // Include any embedded dashboard content (powerBI)
+            // b. Include any embedded dashboard content (powerBI)
             d3.selectAll('.powerBI-embed-container *').remove()
             if(d.embeddedURL !== ''){
                 d3.select('.powerBI-embed-container').append('iframe')
                     .attr('src', d.embeddedURL)
             }
-
-            // Blur the main content and bring in the modal
+            // c. Blur the main content and bring in the modal
             vis.methods.ui.openModal()
-        
         };
+
         // Node hover events
         function nodeMouseover(ev, d){
+            // a. Highlight relevant nodes and links
             const nodeClass = helpers.slugify(d.nodeName)
             let inputNodeClass = d.inputNodes.map(d => `.node.${helpers.slugify(d.target)},  .node-label.${helpers.slugify(d.target)} `).toString(','),
                 outputNodeClass = d.outputNodes.map(d => `.node.${helpers.slugify(d.target)}, .node-label.${helpers.slugify(d.target)}`).toString(',')
@@ -548,52 +643,86 @@
             d3.selectAll(`.link, .node, .node-label`).style('opacity', 0.05)
             d3.selectAll(`.link.${nodeClass}`).style('opacity', 1)
             d3.selectAll(`.${nodeClass} ${inputNodeClass} ${outputNodeClass}`).style('opacity', 1)
+
+            // a. Show tooltip
+            showTooltip(ev, d, this, 'node')
         };
 
         // Link hover events
         function linkMouseover(ev, d){
+            // a. Highlight relevant nodes and links
             const sourceClass = helpers.slugify(d.source),
                 targetClass =    helpers.slugify(d.target)
-
             d3.selectAll(`.link, .node, .node-label`).style('opacity', 0.05)
             d3.selectAll(`.link.${sourceClass}.${targetClass}, .node.${sourceClass}, .node.${targetClass}, .node-label.${sourceClass}, .node-label.${targetClass}`).style('opacity', 1)
+            // ab. SHow tooltip
+            showTooltip(ev, d, this, 'link')
         };
+
         // Mouseout for node add links to reset
         function mouseout(){
             d3.selectAll(`.link, .node, .node-label, .node-link-cover`).style('opacity', null)
-            
+            d3.select('.tooltip').style('opacity', null)
         };
 
         // Tooltip
-        function showTooltip(data){
+        function showTooltip(ev, d, el, type){
+            const tooltip = {
+                width: document.querySelector('.tooltip').offsetWidth, 
+                height: document.querySelector('.tooltip').offsetHeight
+            }
+            const mousePos = {x: ev.offsetX, y: ev.offsetY}
 
+            switch(type){
+                case 'node':
+                    d3.select('.tooltip-header').html(`${d.nodeName} estimated volume in ${vis.state.year} (${vis.state.material})`)
+                    d3.select('.tooltip-volume').html(`${helpers.numberFormatters.formatComma(d.value)} tonnes`)
+                    d3.select('.tooltip-detail').html(`${helpers.numberFormatters.formatPct1dec(d.value / totalVolume)} of total waste <p class = "tooltip-more">Click on this node to learn more</p>`)
+                    break
+
+                case 'link':
+                    d3.select('.tooltip-header').html(`Estimated volume from ${d.source}} to ${d.target} in ${vis.state.year} (for ${vis.state.material})`)
+                    d3.select('.tooltip-volume').html(`${helpers.numberFormatters.formatComma(d.value)} tonnes`)
+                    d3.select('.tooltip-detail').html(`${helpers.numberFormatters.formatPct1dec(d.value / totalVolume)} of total waste`)
+                    break
+            }
+
+            d3.select('.tooltip')
+                .style('top', `${mousePos.y }px` )
+                .style('left', `${mousePos.x - tooltip.width * 0.25 }px` )
+                .style('opacity', 1)
         };
 
 
     }; // end renderVis()
 
     async function addInteractions(){
-        // Fade in graphic when rendered
-        d3.select(`#${settings.svgID}`)
-            .transition().duration(500)
+        // I. Fade in graphic when rendered
+        d3.selectAll(`#${settings.svgID}, .title-block`).style('opacity', 0)
+            .transition().duration(800)
             .style('opacity', null)
 
+        // II. Fill dropdown containers 
+        for( region of data.schema.list.lga){
+            d3.select('#region-selector').append('option')
+                .attr('value', region).html(region)
+        }
+        for( year of data.schema.list.year){
+            d3.select('#year-selector').append('option')
+                .attr('value', year).html(year)
+        }
+        for( submaterial of data.schema.list.submaterial){
+            d3.select('#material-selector').append('option')
+                .attr('value', submaterial).html(submaterial)
+        }
 
-        // d3.selectAll('.node-label').style('transform', 'rotate(90deg)')
-        // d3.selectAll('.label-section').style('transform', 'rotate(90deg) translate(0px, -150px)')
+        // III. Ensure each dropdown is set to initialised vis.state settings
+        document.querySelector('#region-selector').value = vis.state.region 
+        document.querySelector('#year-selector').value = vis.state.year
+        document.querySelector('#material-selector').value = vis.state.material
 
-
-        // Modal
-        vis.methods.ui.closeModal = () =>{
-            document.querySelector('.modal-container').classList.add('closed')
-            document.querySelector('main').classList.remove('blur')
-        } 
-        vis.methods.ui.openModal = () =>{
-            document.querySelector('.modal-container').classList.remove('closed')
-            document.querySelector('main').classList.add('blur')
-        } 
-
-        // Add event listeners
+        // IV. Add event listeners
+        d3.selectAll('.data-selector').on('change', vis.methods.ui.updateVis)
         d3.select('.modal-close-button').on('click', vis.methods.ui.closeModal)
 
     }; // end addInteractions()
@@ -661,7 +790,7 @@
                     }                    
                 }            
                 if(centerVertical){
-                    text.style("transform",  "translateY(-"+(4 * (lineNumber))+"px)")
+                    text.style("transform",  "translateY(-"+(6 * (lineNumber))+"px)")
                 }
             })
         }
