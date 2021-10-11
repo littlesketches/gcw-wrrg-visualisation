@@ -134,7 +134,9 @@ aside{
     mix-blend-mode: multiply;
     opacity: 0.25;
 }
-
+.link:hover{
+    opacity: 0.65;
+}
 .label-section{
     font-size: 30px;
     font-weight: 600;

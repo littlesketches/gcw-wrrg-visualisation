@@ -260,15 +260,17 @@
 
                 // Create link data
                 for (obj of flowYearData.filter(d => d.lga === region)){
-                    data.chart.link[region][submaterial].push({
-                        source:     obj.sourceNode,
-                        target:     obj.targetNode,
-                        stemLength1:   obj.stemLength1,
-                        stemLength2:   obj.stemLength2,
-                        value:      obj[submaterial],
-                        rankIn:     obj.rankIn,    
-                        rankOut:    obj.rankOut    
-                    })
+                    if(obj[submaterial] > 0){
+                        data.chart.link[region][submaterial].push({
+                            source:     obj.sourceNode,
+                            target:     obj.targetNode,
+                            stemLength1:   obj.stemLength1,
+                            stemLength2:   obj.stemLength2,
+                            value:      obj[submaterial],
+                            rankIn:     obj.rankIn,    
+                            rankOut:    obj.rankOut    
+                        })
+                    }
                 } 
 
                 // Loop to re-ranked input nodes for layout
@@ -474,7 +476,7 @@
                         }) 
                 )
                 .style('stroke-width', vis.scale.linkWidth(linkObj.value))
-                .on('mouseover', linkMouseover)
+                .on('click', linkClick)
                 .on('mouseout', mouseout)
         }
 
@@ -649,7 +651,7 @@
         };
 
         // Link hover events
-        function linkMouseover(ev, d){
+        function linkClick(ev, d){
             // a. Highlight relevant nodes and links
             const sourceClass = helpers.slugify(d.source),
                 targetClass =    helpers.slugify(d.target)
