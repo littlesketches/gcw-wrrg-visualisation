@@ -61,7 +61,7 @@ aside{
 
     }
     .logo-container img{
-        width: 40%;
+        width: 30%;
     }
     .title-container{
         display: inline-block
@@ -193,7 +193,7 @@ aside{
     width: 17.5vw;
     /* height: 5vw; */
     background-color: rgba(0, 0, 0, 0.85);
-    border:var(--lime) 2px solid;
+    border:var(--lime) 1px solid;
     color: #fff;
     border-radius: 1.25vw;
     display: grid;
