@@ -195,17 +195,17 @@ aside{
     background-color: rgba(0, 0, 0, 0.85);
     border:var(--lime) 1px solid;
     color: #fff;
-    border-radius: 1.25vw;
+    border-radius: 1.0vw;
     display: grid;
     padding: 1vw;
     pointer-events: none;
 }
 .tooltip-header{
-    font-size: 0.8vw;
+    font-size: 0.6vw;
     height: fit-content;
 }
 .tooltip-content{
-    font-size: 0.8vw;
+    font-size: 0.6vw;
     height: fit-content;
 }
 .tooltip-volume{
