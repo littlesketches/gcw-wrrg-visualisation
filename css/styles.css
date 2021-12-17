@@ -190,8 +190,8 @@ aside{
     top: 0;
     left: 0;
     opacity: 0;
-    width: 17.5vw;
-    /* height: 5vw; */
+    width: 15.5vw;
+    /* height: 4vw; */
     background-color: rgba(0, 0, 0, 0.85);
     border:var(--lime) 1px solid;
     color: #fff;
@@ -210,7 +210,7 @@ aside{
 }
 .tooltip-volume{
     color: var(--lime);
-    font-size: 1.25vw;
+    font-size: 1.0vw;
     padding: 0.25rem 0;
 }
 .tooltip-more{
