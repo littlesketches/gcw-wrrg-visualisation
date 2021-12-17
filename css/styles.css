@@ -193,7 +193,7 @@ aside{
     width: 15.5vw;
     /* height: 4vw; */
     background-color: rgba(0, 0, 0, 0.85);
-    border:var(--lime) 1px solid;
+    border:var(--grey) 1px solid;
     color: #fff;
     border-radius: 1.0vw;
     display: grid;
