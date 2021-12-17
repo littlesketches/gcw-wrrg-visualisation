@@ -209,7 +209,7 @@ aside{
     height: fit-content;
 }
 .tooltip-volume{
-    color: var(--lime);
+    color: var(--grey);
     font-size: 1.0vw;
     padding: 0.25rem 0;
 }
