@@ -216,7 +216,7 @@ aside{
 .tooltip-more{
     text-align: center;
     font-style: italic;
-    color: var(--lime);
+    color: var(--grey);
 }
 /** MODAL WINDOW ***/
 .modal-container{
